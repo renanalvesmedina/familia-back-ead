@@ -1,0 +1,12 @@
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Domain\bin\Debug\net7.0\Familia.Ead.Domain.deps.json
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Domain\bin\Debug\net7.0\Familia.Ead.Domain.dll
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Domain\bin\Debug\net7.0\Familia.Ead.Domain.pdb
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Domain\obj\Debug\net7.0\Familia.Ead.Domain.csproj.AssemblyReference.cache
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Domain\obj\Debug\net7.0\Familia.Ead.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Domain\obj\Debug\net7.0\Familia.Ead.Domain.AssemblyInfoInputs.cache
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Domain\obj\Debug\net7.0\Familia.Ead.Domain.AssemblyInfo.cs
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Domain\obj\Debug\net7.0\Familia.Ead.Domain.csproj.CoreCompileInputs.cache
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Domain\obj\Debug\net7.0\Familia.Ead.Domain.dll
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Domain\obj\Debug\net7.0\refint\Familia.Ead.Domain.dll
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Domain\obj\Debug\net7.0\Familia.Ead.Domain.pdb
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Domain\obj\Debug\net7.0\ref\Familia.Ead.Domain.dll

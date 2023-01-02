@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Familia.Ead.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Familia.Ead.Api.Controllers.Authentication.AuthenticationController.Authentication(Familia.Ead.Api.Controllers.Authentication.Inputs.AuthenticationInput)">
+            <summary>
+            Authentication
+            </summary>
+            <param name="input">Login Data</param>
+            <returns>Return jwt token</returns>
+        </member>
+        <member name="T:Familia.Ead.Api.Controllers.Authentication.Inputs.AuthenticationInput">
+            <summary>
+            Authentication Data
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Authentication.Inputs.AuthenticationInput.Email">
+            <summary>
+            Email of login on platform
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Authentication.Inputs.AuthenticationInput.Password">
+            <summary>
+            Password
+            </summary>
+        </member>
+        <member name="T:Familia.Ead.Api.Controllers.Courses.CourseController">
+            <summary>
+            Course Operations
+            </summary>
+        </member>
+        <member name="M:Familia.Ead.Api.Controllers.Courses.CourseController.CreateCourse(Familia.Ead.Api.Controllers.Courses.Inputs.CreateCourseInput)">
+            <summary>
+            Create a new course
+            </summary>
+            <param name="input">Course Data</param>
+            <returns>Course Id</returns>
+        </member>
+        <member name="T:Familia.Ead.Api.Controllers.Courses.Inputs.CreateCourseInput">
+            <summary>
+            Create Course Data
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Courses.Inputs.CreateCourseInput.CourseName">
+            <summary>
+            Name of Course
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Courses.Inputs.CreateCourseInput.Description">
+            <summary>
+            Description of course
+            </summary>
+        </member>
+        <member name="M:Familia.Ead.Api.Controllers.Enrollment.EnrollmentController.CreateEnrollment(Familia.Ead.Api.Controllers.Enrollment.Inputs.CreateEnrollmentInput)">
+            <summary>
+            Create a new enrollment
+            </summary>
+            <param name="input">Enrollment Data</param>
+            <returns></returns>
+        </member>
+        <member name="T:Familia.Ead.Api.Controllers.Enrollment.Inputs.CreateEnrollmentInput">
+            <summary>
+            Create Enrollment Data
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Enrollment.Inputs.CreateEnrollmentInput.StudentId">
+            <summary>
+            User id of student
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Enrollment.Inputs.CreateEnrollmentInput.CourseId">
+            <summary>
+            Id of course
+            </summary>
+        </member>
+        <member name="T:Familia.Ead.Api.Controllers.Me.MeController">
+            <summary>
+            User operations
+            </summary>
+        </member>
+        <member name="M:Familia.Ead.Api.Controllers.Me.MeController.GetCourses">
+            <summary>
+            Search courses of student
+            </summary>
+            <returns>Return list of courses by user id</returns>
+        </member>
+    </members>
+</doc>
