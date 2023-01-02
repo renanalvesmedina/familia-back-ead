@@ -1,6 +1,9 @@
 ﻿using Familia.Ead.Api.Controllers.Courses.Inputs;
 using Familia.Ead.Application.Requests.Courses.CreateCourse;
+using Familia.Ead.Domain.Entities.Authentication;
+using Familia.Ead.Infrastructure.Bootstrap.Attributes;
 using Lumini.Common.Model.Presenter.WebApi;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Familia.Ead.Api.Controllers.Courses
@@ -10,6 +13,7 @@ namespace Familia.Ead.Api.Controllers.Courses
     /// </summary>
     [Route("v1/[controller]")]
     [ApiController]
+    [Authorize]
     public class CourseController : SuperApiController
     {
         /// <summary>
@@ -17,6 +21,7 @@ namespace Familia.Ead.Api.Controllers.Courses
         /// </summary>
         /// <param name="input">Course Data</param>
         /// <returns>Course Id</returns>
+        [ClaimsAuthorize(ClaimConstants.CLAIM_TYPE_COURSE, ClaimConstants.ACTION_CREATE)]
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status422UnprocessableEntity)]

@@ -2,20 +2,19 @@
 using Familia.Ead.Infrastructure.DbContexts;
 using Lumini.Common.Mediator;
 using Lumini.Common.Model;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Familia.Ead.Application.Requests.Me.GetCourses
+namespace Familia.Ead.Application.Requests.Me.GetMyCourses
 {
-    public class GetCoursesHandler : Handler<GetCoursesRequest, IEnumerable<GetCoursesResponse>>
+    public class GetMyCoursesHandler : Handler<GetMyCoursesRequest, IEnumerable<GetMyCoursesResponse>>
     {
         private readonly AppDbContext _context;
 
-        public GetCoursesHandler(AppDbContext context) => _context = context;
+        public GetMyCoursesHandler(AppDbContext context) => _context = context;
 
-        public override async Task<Result<IEnumerable<GetCoursesResponse>>> Handle(GetCoursesRequest request, CancellationToken cancellationToken)
+        public override async Task<Result<IEnumerable<GetMyCoursesResponse>>> Handle(GetMyCoursesRequest request, CancellationToken cancellationToken)
         {
-            var result = new List<GetCoursesResponse>();
+            var result = new List<GetMyCoursesResponse>();
 
             var enrolls = await _context.Enrollments.Where(x => x.StudentId == request.UserId).ToListAsync(cancellationToken);
 
@@ -31,7 +30,7 @@ namespace Familia.Ead.Application.Requests.Me.GetCourses
                     && x.CourseId == enrollment.Course.Id,
                     cancellationToken);
 
-                var courseResult = new GetCoursesResponse
+                var courseResult = new GetMyCoursesResponse
                 {
                     CourseId = course.Id,
                     CourseName = course.CourseName,

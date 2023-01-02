@@ -80,7 +80,7 @@
             User operations
             </summary>
         </member>
-        <member name="M:Familia.Ead.Api.Controllers.Me.MeController.GetCourses">
+        <member name="M:Familia.Ead.Api.Controllers.Me.MeController.GetMyCourses">
             <summary>
             Search courses of student
             </summary>

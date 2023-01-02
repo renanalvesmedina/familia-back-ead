@@ -1,7 +1,6 @@
 ﻿using Familia.Ead.Domain.Entities.Authentication;
 using Lumini.Common.Mediator;
 using Lumini.Common.Model;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -10,12 +9,10 @@ namespace Familia.Ead.Application.Requests.Authentication.GenerateToken
 {
     public class GenerateTokenHandler : Handler<GenerateTokenRequest, GenerateTokenResponse>
     {
-        private readonly IConfiguration _configuration;
         private readonly JwtOptions _jwtOptions;
 
-        public GenerateTokenHandler(IConfiguration configuration, IOptions<JwtOptions> jwtOptions)
+        public GenerateTokenHandler(IOptions<JwtOptions> jwtOptions)
         {
-            _configuration = configuration;
             _jwtOptions = jwtOptions.Value;
         }
 
@@ -24,6 +21,9 @@ namespace Familia.Ead.Application.Requests.Authentication.GenerateToken
             request.Claims.Add(new Claim(JwtRegisteredClaimNames.Sub, request.UserId.ToString()));
             request.Claims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
             request.Claims.Add(new Claim(JwtRegisteredClaimNames.Iat, DateTime.Now.ToString()));
+
+            foreach (var role in request.Roles)
+                request.Claims.Add(new Claim("role", role));
 
             var expirationDate = DateTime.Now.AddSeconds(_jwtOptions.Expiration);
 

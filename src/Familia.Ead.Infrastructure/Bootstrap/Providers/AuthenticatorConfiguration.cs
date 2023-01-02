@@ -46,7 +46,7 @@ namespace Familia.Ead.Infrastructure.Bootstrap.Providers
                 ValidateIssuer = true,
                 ValidIssuer = configuration.GetSection("JwtOptions:Issuer").Value,
 
-                ValidateAudience = true,
+                ValidateAudience = false,
                 ValidAudience = configuration.GetSection("JwtOptions:Audience").Value,
 
                 ValidateIssuerSigningKey = true,

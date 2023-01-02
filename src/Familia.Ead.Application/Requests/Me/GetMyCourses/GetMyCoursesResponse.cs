@@ -1,9 +1,9 @@
-﻿namespace Familia.Ead.Application.Requests.Me.GetCourses
+﻿namespace Familia.Ead.Application.Requests.Me.GetMyCourses
 {
     /// <summary>
     /// Return course data
     /// </summary>
-    public class GetCoursesResponse
+    public class GetMyCoursesResponse
     {
         public Guid CourseId { get; set; }
         public string CourseName { get; set; }
