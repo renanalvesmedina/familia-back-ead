@@ -24,9 +24,11 @@ namespace Familia.Ead.Infrastructure.Bootstrap
             .GetRequiredService<IServiceScopeFactory>()
             .CreateScope();
 
-            using var context = serviceScope.ServiceProvider.GetService<AppDbContext>();
+            using var appDbContext = serviceScope.ServiceProvider.GetService<AppDbContext>();
+            using var authenticationContext = serviceScope.ServiceProvider.GetService<AuthenticationContext>();
 
-            context?.Database.Migrate();
+            appDbContext?.Database.Migrate();
+            authenticationContext?.Database.Migrate();
 
             return app;
         }
