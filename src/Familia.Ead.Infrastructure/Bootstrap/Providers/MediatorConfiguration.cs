@@ -11,6 +11,8 @@ namespace Familia.Ead.Infrastructure.Bootstrap.Providers
             var assemblies = AppDomain.CurrentDomain.Load("Familia.Ead.Application");
 
             services.AddMediatR(assemblies);
+
+            services.AddAutoMapper(assemblies);
         }
     }
 }

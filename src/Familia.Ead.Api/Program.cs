@@ -58,13 +58,28 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddLuminiPresenter();
 builder.Services.ConfigureServices(builder.Configuration);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "myAllowOrigins", 
+        policy =>
+        {
+            policy.WithOrigins("*")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+        });
+});
+
 var app = builder.Build();
+
+app.Configure();
 
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Familia Ead Api v1"));
 }
+
+app.UseCors("myAllowOrigins");
 
 app.UseHttpsRedirection();
 

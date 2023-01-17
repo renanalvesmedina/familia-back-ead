@@ -11,6 +11,9 @@ namespace Familia.Ead.Infrastructure.Mappings
             builder.ToTable("Classes");
             builder.HasKey(c => c.Id);
 
+
+            builder.Property(c => c.OrderId).UseIdentityColumn();
+
             builder
                 .HasOne(x => x.Course)
                 .WithMany(s => s.Classes)

@@ -55,6 +55,8 @@ namespace Familia.Ead.Application.Requests.Authentication.Authenticate
 
             var result = new AuthenticationResponse
             {
+                UserName = user.FullName,
+                ProfilePicture = user.ProfilePictureUri,
                 Token = tokenResponse.Value.Token,
                 Expiration = tokenResponse.Value.Expiration
             };

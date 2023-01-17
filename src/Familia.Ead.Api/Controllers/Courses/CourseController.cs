@@ -1,5 +1,7 @@
 ﻿using Familia.Ead.Api.Controllers.Courses.Inputs;
 using Familia.Ead.Application.Requests.Courses.CreateCourse;
+using Familia.Ead.Application.Requests.Courses.GetCourse;
+using Familia.Ead.Application.Requests.Courses.SearchCourses;
 using Familia.Ead.Domain.Entities.Authentication;
 using Familia.Ead.Infrastructure.Bootstrap.Attributes;
 using Lumini.Common.Model.Presenter.WebApi;
@@ -39,6 +41,52 @@ namespace Familia.Ead.Api.Controllers.Courses
             var result = await Send(request);
 
             return Created(result);
+        }
+
+        /// <summary>
+        /// Search all courses
+        /// </summary>
+        /// <returns>Return list of courses</returns>
+        [ClaimsAuthorize(ClaimConstants.CLAIM_TYPE_COURSE, ClaimConstants.ACTION_VIEW)]
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status422UnprocessableEntity)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<IEnumerable<SearchCoursesResponse>>> SearchCourses([FromRoute] bool isEnabled = true)
+        {
+            var request = new SearchCoursesRequest
+            {
+                IsEnabled = isEnabled
+            };
+
+            var result = await Send(request);
+
+            return Ok(result);
+        }
+
+        /// <summary>
+        /// Get course details
+        /// </summary>
+        /// <returns>Return details of course</returns>
+        [ClaimsAuthorize(ClaimConstants.CLAIM_TYPE_COURSE, ClaimConstants.ACTION_VIEW)]
+        [HttpGet("details")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status422UnprocessableEntity)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<GetCourseResponse>> GetCourse([FromQuery] Guid courseId)
+        {
+            var request = new GetCourseRequest
+            {
+                CourseId = courseId
+            };
+
+            var result = await Send(request);
+
+            return Ok(result);
         }
     }
 }

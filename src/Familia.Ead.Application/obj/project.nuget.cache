@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "w0+NI+g88cE+ksU+tA9Qj+Va683ifbUeOKZWpUmw4AZAiDNYbFKvsabTRrnKDLSbcUDDq1caDOFmKLcpzE71dg==",
+  "dgSpecHash": "vDdLMcOZYycUoKaYum0OBQP8uCcFacg+HbFgzWn1HPEJ67jgCH7Fk3NefiqYmifmHCf7xHdc15xWF0BW/rMpqA==",
   "success": true,
   "projectFilePath": "C:\\Users\\alves\\source\\repos\\familia-back-ead\\src\\Familia.Ead.Application\\Familia.Ead.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\alves\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\alves\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\alves\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\alves\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\alves\\.nuget\\packages\\lumini.common.mediator\\1.0.10\\lumini.common.mediator.1.0.10.nupkg.sha512",
@@ -24,7 +26,7 @@
     "C:\\Users\\alves\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\7.0.1\\microsoft.aspnetcore.identity.entityframeworkcore.7.0.1.nupkg.sha512",
     "C:\\Users\\alves\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "C:\\Users\\alves\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "C:\\Users\\alves\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\alves\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\alves\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",
     "C:\\Users\\alves\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.0.1\\microsoft.data.sqlclient.sni.runtime.5.0.1.nupkg.sha512",
     "C:\\Users\\alves\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.1\\microsoft.entityframeworkcore.7.0.1.nupkg.sha512",

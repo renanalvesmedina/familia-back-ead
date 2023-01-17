@@ -25,17 +25,21 @@ namespace Familia.Ead.Application.Requests.Me.GetMyCourses
             {
                 var course = await _context.Courses.SingleOrDefaultAsync(x => x.Id == enrollment.CourseId, cancellationToken);
 
-                var lastClassViewed = await _context.StudentHistories.OrderBy(c => c.ViewingDate).LastOrDefaultAsync(
+                var studentClassHistory = await _context.StudentHistories.OrderBy(c => c.ViewingDate).LastOrDefaultAsync(
                     x => x.StudentId == request.UserId
                     && x.CourseId == enrollment.Course.Id,
                     cancellationToken);
+
+                var lastClassViewed = studentClassHistory == null
+                    ? await _context.Classes.Where(c => c.Course == course && c.OrderId == 1).Select(c => c.Id).SingleOrDefaultAsync(cancellationToken)
+                    : studentClassHistory.ClassId;
 
                 var courseResult = new GetMyCoursesResponse
                 {
                     CourseId = course.Id,
                     CourseName = course.CourseName,
                     CourseCardUri = course.CardUri,
-                    LastClassAttendedId = lastClassViewed.Id
+                    LastClassAttendedId = lastClassViewed,
                 };
 
                 result.Add(courseResult);

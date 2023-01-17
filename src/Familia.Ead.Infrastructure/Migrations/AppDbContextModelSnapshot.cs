@@ -37,7 +37,16 @@ namespace Familia.Ead.Infrastructure.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("VideoUri")
+                    b.Property<int>("OrderId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"));
+
+                    b.Property<string>("Thumb")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Video")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Workload")

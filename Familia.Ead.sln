@@ -5,11 +5,11 @@ VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Familia.Ead.Api", "src\Familia.Ead.Api\Familia.Ead.Api.csproj", "{7AB704DE-362D-46E3-BDC1-1E30BD5A1ABA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Familia.Ead.Application", "src\Familia.Ead.Application\Familia.Ead.Application.csproj", "{644AAF92-74B9-4ACD-8485-9E20BF59A0FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Familia.Ead.Application", "src\Familia.Ead.Application\Familia.Ead.Application.csproj", "{644AAF92-74B9-4ACD-8485-9E20BF59A0FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Familia.Ead.Infrastructure", "src\Familia.Ead.Infrastructure\Familia.Ead.Infrastructure.csproj", "{A46B57CC-6D14-49FE-8A62-8C5FD2EA3564}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Familia.Ead.Infrastructure", "src\Familia.Ead.Infrastructure\Familia.Ead.Infrastructure.csproj", "{A46B57CC-6D14-49FE-8A62-8C5FD2EA3564}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Familia.Ead.Domain", "src\Familia.Ead.Domain\Familia.Ead.Domain.csproj", "{436781DD-F611-43E1-909E-9326ED432E25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Familia.Ead.Domain", "src\Familia.Ead.Domain\Familia.Ead.Domain.csproj", "{436781DD-F611-43E1-909E-9326ED432E25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

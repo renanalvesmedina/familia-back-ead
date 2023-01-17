@@ -24,6 +24,13 @@ namespace Familia.Ead.Application.Utils
             public static ErrorCatalogEntry InvalidName => ("FAMILY-COURSE-03", "Nome do curso inválido.");
         }
 
+        public static class Class
+        {
+            public static ErrorCatalogEntry NotFound => ("FAMILY-CLASS-01", "Aula não encontrada.");
+            public static ErrorCatalogEntry Exists => ("FAMILY-CLASS-02", "Já existe uma aula com este nome.");
+            public static ErrorCatalogEntry InvalidName => ("FAMILY-CLASS-03", "Nome da aula inválida.");
+        }
+
         public static class Enrollment
         {
             public static ErrorCatalogEntry NotFound => ("FAMILY-ENROLLMENT-01", "Aluno não matriculado.");

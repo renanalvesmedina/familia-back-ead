@@ -24,8 +24,4 @@
     <ProjectReference Include="..\Familia.Ead.Application\Familia.Ead.Application.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\Me\Inputs\" />
-  </ItemGroup>
-
 </Project>

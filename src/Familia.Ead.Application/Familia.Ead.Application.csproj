@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
     <PackageReference Include="Lumini.Common.Mediator" Version="1.0.10" />
     <PackageReference Include="Lumini.Common.Model" Version="1.0.5" />
     <PackageReference Include="MediatR" Version="11.1.0" />

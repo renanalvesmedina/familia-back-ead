@@ -26,6 +26,52 @@
             Password
             </summary>
         </member>
+        <member name="M:Familia.Ead.Api.Controllers.Class.ClassController.CreateClass(Familia.Ead.Api.Controllers.Class.Inputs.CreateClassInput)">
+            <summary>
+            Create a new class
+            </summary>
+            <param name="input">Class Data</param>
+            <returns></returns>
+        </member>
+        <member name="M:Familia.Ead.Api.Controllers.Class.ClassController.SearchClasses(System.Guid)">
+            <summary>
+            Search all class of course
+            </summary>
+            <param name="courseId">Course id to filter classes</param>
+            <returns>Return list of classes</returns>
+        </member>
+        <member name="M:Familia.Ead.Api.Controllers.Class.ClassController.GetClass(System.Guid)">
+            <summary>
+            Get class details
+            </summary>
+            <param name="classId">Course id to filter classes</param>
+            <returns>Return list of classes</returns>
+        </member>
+        <member name="T:Familia.Ead.Api.Controllers.Class.Inputs.CreateClassInput">
+            <summary>
+            Create Class Data
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Class.Inputs.CreateClassInput.className">
+            <summary>
+            Name of Class
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Class.Inputs.CreateClassInput.courseId">
+            <summary>
+            Id of course
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Class.Inputs.CreateClassInput.video">
+            <summary>
+            Uri of video class
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Class.Inputs.CreateClassInput.description">
+            <summary>
+            Description of class
+            </summary>
+        </member>
         <member name="T:Familia.Ead.Api.Controllers.Courses.CourseController">
             <summary>
             Course Operations
@@ -37,6 +83,18 @@
             </summary>
             <param name="input">Course Data</param>
             <returns>Course Id</returns>
+        </member>
+        <member name="M:Familia.Ead.Api.Controllers.Courses.CourseController.SearchCourses(System.Boolean)">
+            <summary>
+            Search all courses
+            </summary>
+            <returns>Return list of courses</returns>
+        </member>
+        <member name="M:Familia.Ead.Api.Controllers.Courses.CourseController.GetCourse(System.Guid)">
+            <summary>
+            Get course details
+            </summary>
+            <returns>Return details of course</returns>
         </member>
         <member name="T:Familia.Ead.Api.Controllers.Courses.Inputs.CreateCourseInput">
             <summary>
@@ -75,6 +133,21 @@
             Id of course
             </summary>
         </member>
+        <member name="T:Familia.Ead.Api.Controllers.Me.Inputs.CreateHistoryStudentInput">
+            <summary>
+            History Student
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Me.Inputs.CreateHistoryStudentInput.CourseId">
+            <summary>
+            Id of Course
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Me.Inputs.CreateHistoryStudentInput.ClassId">
+            <summary>
+            Id of Class
+            </summary>
+        </member>
         <member name="T:Familia.Ead.Api.Controllers.Me.MeController">
             <summary>
             User operations
@@ -85,6 +158,20 @@
             Search courses of student
             </summary>
             <returns>Return list of courses by user id</returns>
+        </member>
+        <member name="M:Familia.Ead.Api.Controllers.Me.MeController.SearchMyClasses(System.Guid)">
+            <summary>
+            Search all class of course
+            </summary>
+            <param name="courseId">Course id to filter classes</param>
+            <returns>Return list of classes</returns>
+        </member>
+        <member name="M:Familia.Ead.Api.Controllers.Me.MeController.CreateHistoryStudent(Familia.Ead.Api.Controllers.Me.Inputs.CreateHistoryStudentInput)">
+            <summary>
+            Create a new course
+            </summary>
+            <param name="input">Course Data</param>
+            <returns>Course Id</returns>
         </member>
     </members>
 </doc>

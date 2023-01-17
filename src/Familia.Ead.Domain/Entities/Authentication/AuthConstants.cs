@@ -28,6 +28,5 @@ namespace Familia.Ead.Domain.Entities.Authentication
         public string Issuer { get; set; }
         public string Audience { get; set; }
         public SigningCredentials SigningCredentials { get; set; }
-        public double Expiration { get; set; }
     }
 }

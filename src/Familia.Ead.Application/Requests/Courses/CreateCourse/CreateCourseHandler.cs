@@ -18,13 +18,13 @@ namespace Familia.Ead.Application.Requests.Courses.CreateCourse
             if (request.CourseName.Length < 3)
                 return BusinessRuleViolated(ErrorCatalog.Course.InvalidName);
 
-            if(await _context.Courses.AnyAsync(c => c.CourseName == request.CourseName.ToUpper(), cancellationToken))
+            if(await _context.Courses.AnyAsync(c => c.CourseName.ToUpper() == request.CourseName.ToUpper(), cancellationToken))
                 return BusinessRuleViolated(ErrorCatalog.Course.Exists);
 
             var course = new Course()
             {
                 Id = Guid.NewGuid(),
-                CourseName = request.CourseName.ToUpper(),
+                CourseName = request.CourseName,
                 Description = request.Description,
                 IsEnabled = true,
                 Workload = 0,

@@ -29,7 +29,6 @@ namespace Familia.Ead.Infrastructure.Bootstrap.Providers
                 opt.Issuer = _jwtAppSettingsOptions[nameof(JwtOptions.Issuer)];
                 opt.Audience = _jwtAppSettingsOptions[nameof(JwtOptions.Audience)];
                 opt.SigningCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha512);
-                opt.Expiration = int.Parse(_jwtAppSettingsOptions[nameof(JwtOptions.Expiration)] ?? "0");
             });
 
             //services.Configure<IdentityOptions>(opt =>
