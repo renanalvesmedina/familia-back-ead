@@ -13,6 +13,7 @@ COPY ["src/Familia.Ead.Domain/Familia.Ead.Domain.csproj", "src/"]
 RUN dotnet restore "src/Familia.Ead.Api.csproj"
 COPY . .
 WORKDIR /src
+RUN ls
 RUN dotnet build "Familia.Ead.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
