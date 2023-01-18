@@ -5,6 +5,8 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /
+RUN dir
+RUN ls
 COPY ["nuget.config", "."]
 COPY ["src/Familia.Ead.Api/Familia.Ead.Api.csproj", "src/"]
 COPY ["src/Familia.Ead.Application/Familia.Ead.Application.csproj", "src/"]
@@ -13,6 +15,8 @@ COPY ["src/Familia.Ead.Domain/Familia.Ead.Domain.csproj", "src/"]
 RUN dotnet restore "src/Familia.Ead.Api.csproj"
 COPY . .
 WORKDIR /
+RUN dir
+RUN ls
 RUN dotnet build "src/Familia.Ead.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
