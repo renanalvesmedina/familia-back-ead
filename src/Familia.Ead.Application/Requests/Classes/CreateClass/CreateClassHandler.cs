@@ -41,6 +41,11 @@ namespace Familia.Ead.Application.Requests.Classes.CreateClass
             };
 
             await _context.Classes.AddAsync(_class, cancellationToken);
+
+            //Increment course workload with more class
+            course.Workload++;
+            _context.Courses.Update(course);
+
             await _context.SaveChangesAsync(cancellationToken);
 
             return Success();

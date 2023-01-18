@@ -9,11 +9,13 @@ namespace Familia.Ead.Infrastructure.Bootstrap.Providers
     {
         public static IServiceCollection ConfigurePersistenceServices(this IServiceCollection services, IConfiguration configuration)
         {
+            var SqlConn = configuration.GetConnectionString("FamiliaEadDb");
+
             services.AddDbContext<AppDbContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("FamiliaEadDb")).EnableSensitiveDataLogging());
+                options.UseSqlServer(SqlConn).EnableSensitiveDataLogging());
 
             services.AddDbContext<AuthenticationContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("FamiliaEadDb")).EnableSensitiveDataLogging());
+                options.UseSqlServer(SqlConn).EnableSensitiveDataLogging());
 
             return services;
         }
