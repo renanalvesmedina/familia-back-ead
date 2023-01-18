@@ -12,9 +12,8 @@ COPY ["src/Familia.Ead.Infrastructure/Familia.Ead.Infrastructure.csproj", "src/"
 COPY ["src/Familia.Ead.Domain/Familia.Ead.Domain.csproj", "src/"]
 RUN dotnet restore "src/Familia.Ead.Api.csproj"
 COPY . .
-WORKDIR /src
-RUN ls
-RUN dotnet build "Familia.Ead.Api.csproj" -c Release -o /app/build
+WORKDIR /
+RUN dotnet build "src/Familia.Ead.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "Familia.Ead.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
