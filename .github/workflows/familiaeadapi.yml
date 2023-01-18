@@ -24,38 +24,17 @@ jobs:
         registry: ${{ env.CONTAINER_REGISTRY_LOGIN_SERVER }}
         username: ${{ secrets.FamiliaEadRegistry_USERNAME_9B8B }}
         password: ${{ secrets.FamiliaEadRegistry_PASSWORD_9B8B }}
+    - name: Ensure Azure DevOps Nuget Source
+      run: |
+        dotnet nuget add source "https://pkgs.dev.azure.com/n3devops/_packaging/LuminiTec/nuget/v3/index.json" -n LuminiTec -u user -p ${{ secrets.AZURE_DEVOPS_TOKEN }} --store-password-in-clear-text
+    - name: List nuget sources
+      run: dotnet nuget list source
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
         tags: ${{ env.CONTAINER_REGISTRY_LOGIN_SERVER }}/${{ env.PROJECT_NAME_FOR_DOCKER }}:${{ github.sha }}
         file: ${{ env.DOCKER_FILE_PATH }}
-  az-artifacts-build-and-deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      # Checkout the repo
-      - uses: actions/checkout@v2
-
-      # Setup .NET Core SDK
-      - name: Setup .NET Core
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: ${{ env.DOTNET_VERSION }}
-          source-url: 'https://pkgs.dev.azure.com/n3devops/_packaging/LuminiTec/nuget/v3/index.json'
-        env:
-          NUGET_AUTH_TOKEN: ${{ secrets.AZURE_DEVOPS_TOKEN }} 
-
-      # Run dotnet build and package
-      - name: dotnet build and publish
-        run: |
-          dotnet restore
-          dotnet build --configuration '${{ env.BUILD_CONFIGURATION }}'
-          dotnet pack -c '${{ env.BUILD_CONFIGURATION }}' --version-suffix $GITHUB_RUN_ID
-
-      # Publish the package to Azure Artifacts
-      - name: 'dotnet publish'
-        run: dotnet nuget push --api-key AzureArtifacts bin/Release/*.nupkg 
   deploy:
     runs-on: ubuntu-latest
     needs: build
