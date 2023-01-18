@@ -24,9 +24,6 @@ jobs:
         registry: ${{ env.CONTAINER_REGISTRY_LOGIN_SERVER }}
         username: ${{ secrets.FamiliaEadRegistry_USERNAME_9B8B }}
         password: ${{ secrets.FamiliaEadRegistry_PASSWORD_9B8B }}
-    - name: Ensure Azure DevOps Nuget Source
-      run: |
-        dotnet nuget add source "https://pkgs.dev.azure.com/n3devops/_packaging/LuminiTec/nuget/v3/index.json" -n LuminiTec -u "renan@n3tecnologia.com" -p ${{ secrets.AZURE_DEVOPS_TOKEN }} --store-password-in-clear-text
     - name: List nuget sources
       run: dotnet nuget list source
     - name: Build and push container image to registry
