@@ -13,6 +13,8 @@ COPY ["src/Familia.Ead.Infrastructure/Familia.Ead.Infrastructure.csproj", "src/F
 COPY ["src/Familia.Ead.Domain/Familia.Ead.Domain.csproj", "src/Familia.Ead.Domain"]
 WORKDIR /src
 RUN ls
+WORKDIR /src/Familia.Ead.Api
+RUN ls
 WORKDIR /
 RUN dotnet restore "src/Familia.Ead.Api/Familia.Ead.Api.csproj"
 COPY . .
