@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Familia.Ead.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class InitialMigrations : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -49,10 +49,12 @@ namespace Familia.Ead.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    OrderId = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Workload = table.Column<int>(type: "int", nullable: false),
-                    VideoUri = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Video = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Thumb = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CourseId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
@@ -89,6 +91,11 @@ namespace Familia.Ead.Infrastructure.Migrations
                 name: "IX_Classes_CourseId",
                 table: "Classes",
                 column: "CourseId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Classes_OrderId",
+                table: "Classes",
+                column: "OrderId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Enrollments_CourseId",

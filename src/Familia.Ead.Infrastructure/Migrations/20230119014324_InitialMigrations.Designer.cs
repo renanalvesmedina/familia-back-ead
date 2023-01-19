@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Familia.Ead.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230115204055_AddField_OrderId_InClass")]
-    partial class AddFieldOrderIdInClass
+    [Migration("20230119014324_InitialMigrations")]
+    partial class InitialMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,10 +41,7 @@ namespace Familia.Ead.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("OrderId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"));
 
                     b.Property<string>("Thumb")
                         .HasColumnType("nvarchar(max)");
@@ -58,6 +55,8 @@ namespace Familia.Ead.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CourseId");
+
+                    b.HasIndex("OrderId");
 
                     b.ToTable("Classes", (string)null);
                 });

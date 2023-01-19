@@ -11,9 +11,6 @@ namespace Familia.Ead.Infrastructure.Mappings
             builder.ToTable("Classes");
             builder.HasKey(c => c.Id);
 
-
-            builder.Property(c => c.OrderId).UseIdentityColumn();
-
             builder
                 .HasOne(x => x.Course)
                 .WithMany(s => s.Classes)
@@ -22,6 +19,7 @@ namespace Familia.Ead.Infrastructure.Mappings
                 .IsRequired();
 
             builder.HasIndex(x => new { x.CourseId });
+            builder.HasIndex(x => new { x.OrderId });
         }
     }
 }

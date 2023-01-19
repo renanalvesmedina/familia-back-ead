@@ -33,6 +33,7 @@ namespace Familia.Ead.Application.Requests.Classes.CreateClass
             {
                 Id = Guid.NewGuid(),
                 Name = request.ClassName,
+                OrderId = course.Workload + 1,
                 Description = request.Description,
                 Video = request.Video,
                 Course = course,

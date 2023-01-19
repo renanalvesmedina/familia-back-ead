@@ -38,10 +38,7 @@ namespace Familia.Ead.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("OrderId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"));
 
                     b.Property<string>("Thumb")
                         .HasColumnType("nvarchar(max)");
@@ -55,6 +52,8 @@ namespace Familia.Ead.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CourseId");
+
+                    b.HasIndex("OrderId");
 
                     b.ToTable("Classes", (string)null);
                 });

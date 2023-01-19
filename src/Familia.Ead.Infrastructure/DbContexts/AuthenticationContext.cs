@@ -54,10 +54,10 @@ namespace Familia.Ead.Infrastructure.DbContexts
             var adminUser = new User() 
             { 
                 Id = Guid.Parse("6f03e211-d764-4c34-afce-3cdaac7cce5f"),
-                UserName = "contato@igrejafamilia.net",
-                NormalizedUserName = "contato@igrejafamilia.net".ToUpper(),
-                Email = "contato@igrejafamilia.net",
-                NormalizedEmail = "contato@igrejafamilia.net".ToUpper(),
+                UserName = "contato@igrejafamilia.net.br",
+                NormalizedUserName = "contato@igrejafamilia.net.br".ToUpper(),
+                Email = "contato@igrejafamilia.net.br",
+                NormalizedEmail = "contato@igrejafamilia.net.br".ToUpper(),
                 FullName = "Familia Ead Admin",
                 CreatedOn = DateTime.Now,
                 SecurityStamp = Guid.NewGuid().ToString()
