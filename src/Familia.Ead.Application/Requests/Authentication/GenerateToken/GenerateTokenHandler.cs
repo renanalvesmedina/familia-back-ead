@@ -25,7 +25,7 @@ namespace Familia.Ead.Application.Requests.Authentication.GenerateToken
             foreach (var role in request.Roles)
                 request.Claims.Add(new Claim("role", role));
 
-            var expirationDate = DateTime.Now.AddHours(2);
+            var expirationDate = DateTime.Now.AddHours(4);
 
 
             var jwt = new JwtSecurityToken(

@@ -2,7 +2,9 @@
 using Familia.Ead.Api.Controllers.Me.Inputs;
 using Familia.Ead.Application.Requests.Courses.CreateCourse;
 using Familia.Ead.Application.Requests.Me.CreateHistoryStudent;
+using Familia.Ead.Application.Requests.Me.EditMyProfile;
 using Familia.Ead.Application.Requests.Me.GetMyCourses;
+using Familia.Ead.Application.Requests.Me.GetMyProfile;
 using Familia.Ead.Application.Requests.Me.SearchMyClasses;
 using Familia.Ead.Domain.Entities.Authentication;
 using Familia.Ead.Infrastructure.Bootstrap.Attributes;
@@ -26,6 +28,54 @@ namespace Familia.Ead.Api.Controllers.Me
         public MeController(IHttpContextAccessor httpContextAccessor)
         {
             _httpContextAccessor = httpContextAccessor;
+        }
+
+        /// <summary>
+        /// Get profile data
+        /// </summary>
+        /// <returns>Return data of student profile</returns>
+        [HttpGet("profile")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status422UnprocessableEntity)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<GetMyProfileResponse>> GetMyProfile()
+        {
+            var request = new GetMyProfileRequest
+            {
+                UserId = Guid.Parse(_httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value)
+            };
+
+            var result = await Send(request);
+
+            return Ok(result);
+        }
+
+
+        /// <summary>
+        /// Edit student profile
+        /// </summary>
+        /// <returns></returns>
+        [HttpPut("profile")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status422UnprocessableEntity)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
+        public async Task<ActionResult> EditMyProfile([FromBody] EditMyProfileInput input)
+        {
+            var request = new EditMyProfileRequest
+            {
+                UserId = Guid.Parse(_httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value),
+                FullName = input.FullName,
+                PhoneNumber = input.PhoneNumber,
+                Sexo = input.Sexo
+            };
+
+            var result = await Send(request);
+
+            return Ok(result);
         }
 
         /// <summary>

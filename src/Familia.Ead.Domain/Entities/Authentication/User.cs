@@ -8,6 +8,7 @@ namespace Familia.Ead.Domain.Entities.Authentication
         [Required]
         public string FullName { get; set; }
         public string ProfilePictureUri { get; set; }
+        public string Sexo { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime UpdatedOn { get; set; }
     }

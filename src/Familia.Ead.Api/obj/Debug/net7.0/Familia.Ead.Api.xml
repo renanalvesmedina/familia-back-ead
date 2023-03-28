@@ -148,10 +148,42 @@
             Id of Class
             </summary>
         </member>
+        <member name="T:Familia.Ead.Api.Controllers.Me.Inputs.EditMyProfileInput">
+            <summary>
+            Edit profile
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Me.Inputs.EditMyProfileInput.FullName">
+            <summary>
+            Nome completo do usuario
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Me.Inputs.EditMyProfileInput.PhoneNumber">
+            <summary>
+            Telefone
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Me.Inputs.EditMyProfileInput.Sexo">
+            <summary>
+            Sexo: M - Masculino | F - Feminino
+            </summary>
+        </member>
         <member name="T:Familia.Ead.Api.Controllers.Me.MeController">
             <summary>
             User operations
             </summary>
+        </member>
+        <member name="M:Familia.Ead.Api.Controllers.Me.MeController.GetMyProfile">
+            <summary>
+            Get profile data
+            </summary>
+            <returns>Return data of student profile</returns>
+        </member>
+        <member name="M:Familia.Ead.Api.Controllers.Me.MeController.EditMyProfile(Familia.Ead.Api.Controllers.Me.Inputs.EditMyProfileInput)">
+            <summary>
+            Edit student profile
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:Familia.Ead.Api.Controllers.Me.MeController.GetMyCourses">
             <summary>

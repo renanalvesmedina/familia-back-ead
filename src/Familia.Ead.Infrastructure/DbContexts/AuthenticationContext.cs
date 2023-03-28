@@ -59,6 +59,8 @@ namespace Familia.Ead.Infrastructure.DbContexts
                 Email = "contato@igrejafamilia.net.br",
                 NormalizedEmail = "contato@igrejafamilia.net.br".ToUpper(),
                 FullName = "Familia Ead Admin",
+                PhoneNumber = "27996239504",
+                Sexo = "M",
                 CreatedOn = DateTime.Now,
                 SecurityStamp = Guid.NewGuid().ToString()
             };

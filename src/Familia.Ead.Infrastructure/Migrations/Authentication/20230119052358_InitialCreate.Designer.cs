@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Familia.Ead.Infrastructure.Migrations.Authentication
 {
     [DbContext(typeof(AuthenticationContext))]
-    [Migration("20230102175603_ChangeClaims")]
-    partial class ChangeClaims
+    [Migration("20230119052358_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -81,6 +81,9 @@ namespace Familia.Ead.Infrastructure.Migrations.Authentication
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Sexo")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
@@ -108,20 +111,22 @@ namespace Familia.Ead.Infrastructure.Migrations.Authentication
                         {
                             Id = new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "61a20cae-d537-4d8f-865c-b9800a03b090",
-                            CreatedOn = new DateTime(2023, 1, 2, 14, 56, 2, 997, DateTimeKind.Local).AddTicks(7090),
-                            Email = "contato@igrejafamilia.net",
+                            ConcurrencyStamp = "2033bf1f-363f-48ff-8f1b-7b0fc0c4c450",
+                            CreatedOn = new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4895),
+                            Email = "contato@igrejafamilia.net.br",
                             EmailConfirmed = false,
                             FullName = "Familia Ead Admin",
                             LockoutEnabled = false,
-                            NormalizedEmail = "CONTATO@IGREJAFAMILIA.NET",
-                            NormalizedUserName = "CONTATO@IGREJAFAMILIA.NET",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDun2V2bYannWC2B2d+eKfQkdIDoAmw8S95sJg1yeivPhJE1C1KTMbpaObUV3iG5GQ==",
+                            NormalizedEmail = "CONTATO@IGREJAFAMILIA.NET.BR",
+                            NormalizedUserName = "CONTATO@IGREJAFAMILIA.NET.BR",
+                            PasswordHash = "AQAAAAIAAYagAAAAEL58YlvJAVotN9KxHmzjC5OoawVKajgZGVUDWrgy/MOhVGK+zXdeop8gELFLtSu0mQ==",
+                            PhoneNumber = "27996239504",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "711f8ef7-5bc2-46ea-9c69-66f07e8727df",
+                            SecurityStamp = "c8494782-2de5-4c38-b65b-2060f93e4866",
+                            Sexo = "M",
                             TwoFactorEnabled = false,
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserName = "contato@igrejafamilia.net"
+                            UserName = "contato@igrejafamilia.net.br"
                         });
                 });
 
@@ -150,162 +155,162 @@ namespace Familia.Ead.Infrastructure.Migrations.Authentication
                     b.HasData(
                         new
                         {
-                            Id = new Guid("9fa3cae5-c45a-457a-b4bd-8c58e2e47015"),
+                            Id = new Guid("0b9f0fd1-1271-499f-bc79-a15ff2437111"),
                             ClaimType = "Manager",
                             ClaimValue = "Create",
-                            CreatedOn = new DateTime(2023, 1, 2, 14, 56, 2, 997, DateTimeKind.Local).AddTicks(6815),
+                            CreatedOn = new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4651),
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("8840df7d-f110-4452-8aca-a37ae029d6df"),
+                            Id = new Guid("eeb28ad4-7634-4e03-86da-6af4fc0da663"),
                             ClaimType = "Manager",
                             ClaimValue = "Edit",
-                            CreatedOn = new DateTime(2023, 1, 2, 14, 56, 2, 997, DateTimeKind.Local).AddTicks(6835),
+                            CreatedOn = new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4666),
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("e7900d90-f633-4cf6-ab41-da29e39ef6a1"),
+                            Id = new Guid("21cd46e3-3a76-47e4-96b6-2aea5668ff27"),
                             ClaimType = "Manager",
                             ClaimValue = "View",
-                            CreatedOn = new DateTime(2023, 1, 2, 14, 56, 2, 997, DateTimeKind.Local).AddTicks(6845),
+                            CreatedOn = new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4668),
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("eb72d7a5-60fe-41d8-ae91-50eabf49980f"),
+                            Id = new Guid("59d87ba0-1963-4a92-be12-6fca8d159eea"),
                             ClaimType = "Manager",
                             ClaimValue = "Delete",
-                            CreatedOn = new DateTime(2023, 1, 2, 14, 56, 2, 997, DateTimeKind.Local).AddTicks(6847),
+                            CreatedOn = new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4669),
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("41da2bc5-5a42-483d-8d26-fcebed11dac0"),
+                            Id = new Guid("ad39277f-a63c-46e8-848b-e0afac18274d"),
                             ClaimType = "Student",
                             ClaimValue = "Create",
-                            CreatedOn = new DateTime(2023, 1, 2, 14, 56, 2, 997, DateTimeKind.Local).AddTicks(6848),
+                            CreatedOn = new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4670),
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("a38b0933-e729-4988-9aaf-64564fca904f"),
+                            Id = new Guid("74e1d49f-b927-4012-a903-bc34e2b54074"),
                             ClaimType = "Student",
                             ClaimValue = "Edit",
-                            CreatedOn = new DateTime(2023, 1, 2, 14, 56, 2, 997, DateTimeKind.Local).AddTicks(6860),
+                            CreatedOn = new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4672),
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("71c2a7f9-5480-44c8-ba56-aea716185e93"),
+                            Id = new Guid("2260266c-3a3d-49b6-abc4-41b19ec3f216"),
                             ClaimType = "Student",
                             ClaimValue = "View",
-                            CreatedOn = new DateTime(2023, 1, 2, 14, 56, 2, 997, DateTimeKind.Local).AddTicks(6862),
+                            CreatedOn = new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4673),
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("cb2e03be-b027-4173-86b4-8aedcfa4e0ef"),
+                            Id = new Guid("6649874b-9959-451c-a776-3f4605ed5a05"),
                             ClaimType = "Student",
                             ClaimValue = "Delete",
-                            CreatedOn = new DateTime(2023, 1, 2, 14, 56, 2, 997, DateTimeKind.Local).AddTicks(6863),
+                            CreatedOn = new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4686),
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("bce89f48-f492-444c-b9e4-8584248cc77f"),
+                            Id = new Guid("2cbcbba4-3ec6-4a84-9013-1ea45f5604ba"),
                             ClaimType = "Enrollment",
                             ClaimValue = "Create",
-                            CreatedOn = new DateTime(2023, 1, 2, 14, 56, 2, 997, DateTimeKind.Local).AddTicks(6865),
+                            CreatedOn = new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4688),
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("1b5c101c-fbf6-43b5-af93-13fe62d9aa97"),
+                            Id = new Guid("d2d22441-64f6-4441-8c31-444607475566"),
                             ClaimType = "Enrollment",
                             ClaimValue = "Edit",
-                            CreatedOn = new DateTime(2023, 1, 2, 14, 56, 2, 997, DateTimeKind.Local).AddTicks(6866),
+                            CreatedOn = new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4689),
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("eecdea88-e983-425e-b6b8-90613dc53fce"),
+                            Id = new Guid("89dc7c91-e11b-4353-8db9-ce6102c4c22a"),
                             ClaimType = "Enrollment",
                             ClaimValue = "View",
-                            CreatedOn = new DateTime(2023, 1, 2, 14, 56, 2, 997, DateTimeKind.Local).AddTicks(6867),
+                            CreatedOn = new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4690),
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("68cbc8d7-706e-47b1-b794-5eeb5a003a6b"),
+                            Id = new Guid("214720b9-285d-493b-a012-8023ea844ecc"),
                             ClaimType = "Enrollment",
                             ClaimValue = "Delete",
-                            CreatedOn = new DateTime(2023, 1, 2, 14, 56, 2, 997, DateTimeKind.Local).AddTicks(6868),
+                            CreatedOn = new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4692),
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("668311d0-5f51-4743-afae-78eeb48f9128"),
+                            Id = new Guid("72e1c8c4-35f7-402a-8dc8-ad85ceebd4ee"),
                             ClaimType = "Course",
                             ClaimValue = "Create",
-                            CreatedOn = new DateTime(2023, 1, 2, 14, 56, 2, 997, DateTimeKind.Local).AddTicks(6870),
+                            CreatedOn = new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4693),
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("8b67ef07-208c-4697-8259-1133fc163a5f"),
+                            Id = new Guid("3392ab3f-dd18-459a-832c-8a88f50ccc8f"),
                             ClaimType = "Course",
                             ClaimValue = "Edit",
-                            CreatedOn = new DateTime(2023, 1, 2, 14, 56, 2, 997, DateTimeKind.Local).AddTicks(6872),
+                            CreatedOn = new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4694),
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("39942aa3-7fe9-4fbf-90e8-e725d51d2f04"),
+                            Id = new Guid("d78cefe3-d363-4407-8d88-3bcf0334ad6b"),
                             ClaimType = "Course",
                             ClaimValue = "View",
-                            CreatedOn = new DateTime(2023, 1, 2, 14, 56, 2, 997, DateTimeKind.Local).AddTicks(6874),
+                            CreatedOn = new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4696),
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("14c70c5f-ea62-41cd-b983-128e1ac4c219"),
+                            Id = new Guid("dc462b0c-ae50-4439-9cca-3d1bdf47745c"),
                             ClaimType = "Course",
                             ClaimValue = "Delete",
-                            CreatedOn = new DateTime(2023, 1, 2, 14, 56, 2, 997, DateTimeKind.Local).AddTicks(6876),
+                            CreatedOn = new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4699),
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("e220d686-b967-48a8-9659-0b7196b45a58"),
+                            Id = new Guid("288452e5-4b74-4b33-8b37-4a89ee34d295"),
                             ClaimType = "Class",
                             ClaimValue = "Create",
-                            CreatedOn = new DateTime(2023, 1, 2, 14, 56, 2, 997, DateTimeKind.Local).AddTicks(6877),
+                            CreatedOn = new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4700),
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("2d680292-e9c1-4e63-befa-98e9d5f6f7aa"),
+                            Id = new Guid("f1e7c3e6-75fd-43fa-976f-a0d659105358"),
                             ClaimType = "Class",
                             ClaimValue = "Edit",
-                            CreatedOn = new DateTime(2023, 1, 2, 14, 56, 2, 997, DateTimeKind.Local).AddTicks(6879),
+                            CreatedOn = new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4701),
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("4a0aaa93-eba1-4fff-98b9-99648ba5434c"),
+                            Id = new Guid("d36cb549-f0fd-41a9-a01f-d9175ff34bab"),
                             ClaimType = "Class",
                             ClaimValue = "View",
-                            CreatedOn = new DateTime(2023, 1, 2, 14, 56, 2, 997, DateTimeKind.Local).AddTicks(6880),
+                            CreatedOn = new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4703),
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = new Guid("81b96ac9-96af-418c-ba5b-dd00b4ef0d97"),
+                            Id = new Guid("d7c0bf23-5820-4fac-bd96-f5abbd0ed587"),
                             ClaimType = "Class",
                             ClaimValue = "Delete",
-                            CreatedOn = new DateTime(2023, 1, 2, 14, 56, 2, 997, DateTimeKind.Local).AddTicks(6881),
+                            CreatedOn = new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4704),
                             UpdatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });

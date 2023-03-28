@@ -10,7 +10,8 @@ namespace Familia.Ead.Application.Utils
 
         public static class Authentication
         {
-            public static ErrorCatalogEntry NotCreated(string desc) => ("FAMILY-AUTHENTICATION-USER-01", desc);
+            public static ErrorCatalogEntry NotCreated(string desc) => ("FAMILY-AUTHENTICATION-USER-00", desc);
+            public static ErrorCatalogEntry NotFoundUser => ("FAMILY-AUTHENTICATION-USER-01", "Usuário não encontrado!");
             public static ErrorCatalogEntry AuthenticateError => ("FAMILY-AUTHENTICATION-02", "Falha no login, tente novamente!");
             public static ErrorCatalogEntry NotFoundRoles => ("FAMILY-AUTHENTICATION-USER-03", "Usuário não tem perfil atribuido!");
             public static ErrorCatalogEntry LockoutUser => ("FAMILY-AUTHENTICATION-04", "Usuário bloqueado!");

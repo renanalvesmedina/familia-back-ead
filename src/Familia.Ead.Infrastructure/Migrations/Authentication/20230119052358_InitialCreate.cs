@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Familia.Ead.Infrastructure.Migrations.Authentication
 {
     /// <inheritdoc />
-    public partial class InitialCreateAuth : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -34,6 +34,7 @@ namespace Familia.Ead.Infrastructure.Migrations.Authentication
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     FullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProfilePictureUri = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Sexo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -189,39 +190,34 @@ namespace Familia.Ead.Infrastructure.Migrations.Authentication
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "CreatedOn", "Email", "EmailConfirmed", "FullName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilePictureUri", "SecurityStamp", "TwoFactorEnabled", "UpdatedOn", "UserName" },
-                values: new object[] { new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f"), 0, "06fc4f0b-0345-44e6-8175-e5ff3431cdd8", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(1141), "contato@igrejafamilia.net", false, "Familia Ead Admin", false, null, "CONTATO@IGREJAFAMILIA.NET", "CONTATO@IGREJAFAMILIA.NET", "AQAAAAIAAYagAAAAEK9ifqB2OXm3hEFQQ9bF77Q2YS2Ssc1vCKHOHMR7m3NzXjl7q3KiHyy/3qIt5YcCFg==", null, false, null, "baec3129-3b57-4b51-99e5-cf3ec7bcf184", false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "contato@igrejafamilia.net" });
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "CreatedOn", "Email", "EmailConfirmed", "FullName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfilePictureUri", "SecurityStamp", "Sexo", "TwoFactorEnabled", "UpdatedOn", "UserName" },
+                values: new object[] { new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f"), 0, "2033bf1f-363f-48ff-8f1b-7b0fc0c4c450", new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4895), "contato@igrejafamilia.net.br", false, "Familia Ead Admin", false, null, "CONTATO@IGREJAFAMILIA.NET.BR", "CONTATO@IGREJAFAMILIA.NET.BR", "AQAAAAIAAYagAAAAEL58YlvJAVotN9KxHmzjC5OoawVKajgZGVUDWrgy/MOhVGK+zXdeop8gELFLtSu0mQ==", "27996239504", false, null, "c8494782-2de5-4c38-b65b-2060f93e4866", "M", false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "contato@igrejafamilia.net.br" });
 
             migrationBuilder.InsertData(
                 table: "UserClaim",
                 columns: new[] { "Id", "ClaimType", "ClaimValue", "CreatedOn", "UpdatedOn" },
                 values: new object[,]
                 {
-                    { new Guid("0ca2411e-d1f1-4b9e-bacb-49dab2bba3cb"), "Enrollment", "Delete", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(919), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("0f428f78-f84d-448c-ac65-8fc5509ab3e6"), "Course", "Create", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(923), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("11d4e56c-0f06-4e29-af57-c338c2131d98"), "Class", "Delete", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(934), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("1f9bae7f-1247-4ef4-b1c1-77aa400306ae"), "Course", "Edit", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(924), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("231f9da4-7edc-4fc7-bdc1-1db838f9f11d"), "Class", "Edit", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(930), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("4660e114-56a6-4f22-ba63-62d0817db671"), "Student", "View", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(911), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("4cf1674e-a0cf-4b14-b071-1650a79b3cf5"), "Course", "Full", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(920), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("5d3d8a7b-4cdb-4748-91c8-4b8522ae8fa3"), "Student", "Delete", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(912), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("5f9adc64-f23f-43e0-a9a7-6715f35ee4f0"), "Class", "Create", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(929), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("6312c0c0-aacf-4e05-80a3-6fac5d9fae09"), "Student", "Full", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(905), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("69e8c893-cd40-4d18-a406-d3b8caf064b8"), "Student", "Edit", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(908), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("72ba31e7-3126-4681-86ec-5fd13a362db1"), "Enrollment", "Full", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(913), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("74338dfc-da12-447a-98ac-ca21a18c996b"), "Enrollment", "View", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(917), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("7c9737cf-c661-4929-a82a-5daa57fe7aaf"), "Course", "View", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(925), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("843013f6-0719-422d-868e-1294fcf10f82"), "Manager", "View", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(902), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("8a275b40-9363-4b22-89d9-97a8793951bc"), "Enrollment", "Create", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(915), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("8ee9286c-476e-4c99-afe9-bb59cbdb1a05"), "Enrollment", "Edit", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(916), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("c60e0d36-c81f-4881-89c2-71457bb502e4"), "Course", "Delete", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(926), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("c804dfa8-ca52-48df-9656-6abf2d0435a3"), "Student", "Create", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(906), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("c845e746-97f2-446b-9c6d-b200d05349e0"), "Manager", "Create", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(899), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("cd55d634-5e00-410a-ab37-b918e1fbe113"), "Class", "Full", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(927), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("cf23afbc-d2c9-4752-ad5c-e4bb6f9a7389"), "Manager", "Delete", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(904), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("dd3cf41b-850a-4446-b546-f34460df4a26"), "Class", "View", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(931), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("ecf86bef-23da-4e57-9077-a82784de5e3d"), "Manager", "Full", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(886), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { new Guid("f64edcc3-afab-4ed8-8f69-3c4725f9b1bf"), "Manager", "Edit", new DateTime(2023, 1, 2, 13, 25, 6, 952, DateTimeKind.Local).AddTicks(901), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { new Guid("0b9f0fd1-1271-499f-bc79-a15ff2437111"), "Manager", "Create", new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4651), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("214720b9-285d-493b-a012-8023ea844ecc"), "Enrollment", "Delete", new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4692), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("21cd46e3-3a76-47e4-96b6-2aea5668ff27"), "Manager", "View", new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4668), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("2260266c-3a3d-49b6-abc4-41b19ec3f216"), "Student", "View", new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4673), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("288452e5-4b74-4b33-8b37-4a89ee34d295"), "Class", "Create", new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4700), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("2cbcbba4-3ec6-4a84-9013-1ea45f5604ba"), "Enrollment", "Create", new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4688), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("3392ab3f-dd18-459a-832c-8a88f50ccc8f"), "Course", "Edit", new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4694), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("59d87ba0-1963-4a92-be12-6fca8d159eea"), "Manager", "Delete", new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4669), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("6649874b-9959-451c-a776-3f4605ed5a05"), "Student", "Delete", new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4686), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("72e1c8c4-35f7-402a-8dc8-ad85ceebd4ee"), "Course", "Create", new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4693), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("74e1d49f-b927-4012-a903-bc34e2b54074"), "Student", "Edit", new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4672), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("89dc7c91-e11b-4353-8db9-ce6102c4c22a"), "Enrollment", "View", new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4690), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("ad39277f-a63c-46e8-848b-e0afac18274d"), "Student", "Create", new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4670), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("d2d22441-64f6-4441-8c31-444607475566"), "Enrollment", "Edit", new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4689), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("d36cb549-f0fd-41a9-a01f-d9175ff34bab"), "Class", "View", new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4703), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("d78cefe3-d363-4407-8d88-3bcf0334ad6b"), "Course", "View", new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4696), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("d7c0bf23-5820-4fac-bd96-f5abbd0ed587"), "Class", "Delete", new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4704), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("dc462b0c-ae50-4439-9cca-3d1bdf47745c"), "Course", "Delete", new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4699), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("eeb28ad4-7634-4e03-86da-6af4fc0da663"), "Manager", "Edit", new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4666), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { new Guid("f1e7c3e6-75fd-43fa-976f-a0d659105358"), "Class", "Edit", new DateTime(2023, 1, 19, 2, 23, 58, 491, DateTimeKind.Local).AddTicks(4701), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -229,11 +225,26 @@ namespace Familia.Ead.Infrastructure.Migrations.Authentication
                 columns: new[] { "Id", "ClaimType", "ClaimValue", "UserId" },
                 values: new object[,]
                 {
-                    { 1, "Manager", "Full", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
-                    { 2, "Student", "Full", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
-                    { 3, "Enrollment", "Full", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
-                    { 4, "Course", "Full", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
-                    { 5, "Class", "Full", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") }
+                    { 1, "Manager", "Create", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
+                    { 2, "Manager", "Edit", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
+                    { 3, "Manager", "Delete", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
+                    { 4, "Manager", "View", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
+                    { 5, "Student", "Create", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
+                    { 6, "Student", "Edit", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
+                    { 7, "Student", "Delete", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
+                    { 8, "Student", "View", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
+                    { 9, "Enrollment", "Create", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
+                    { 10, "Enrollment", "Edit", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
+                    { 11, "Enrollment", "Delete", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
+                    { 12, "Enrollment", "View", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
+                    { 13, "Course", "Create", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
+                    { 14, "Course", "Edit", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
+                    { 15, "Course", "Delete", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
+                    { 16, "Course", "View", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
+                    { 17, "Class", "Create", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
+                    { 18, "Class", "Edit", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
+                    { 19, "Class", "Delete", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") },
+                    { 20, "Class", "View", new Guid("6f03e211-d764-4c34-afce-3cdaac7cce5f") }
                 });
 
             migrationBuilder.InsertData(
