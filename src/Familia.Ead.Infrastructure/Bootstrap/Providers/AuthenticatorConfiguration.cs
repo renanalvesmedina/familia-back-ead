@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using System.Data;
 using System.Text;
 
 namespace Familia.Ead.Infrastructure.Bootstrap.Providers
@@ -17,10 +16,8 @@ namespace Familia.Ead.Infrastructure.Bootstrap.Providers
             var _jwtAppSettingsOptions = configuration.GetSection(nameof(JwtOptions));
             var securityKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(configuration.GetSection("JwtOptions:Secret").Value));
 
-
-            services.AddAuthorization();
-
-            services.AddIdentity<User, IdentityRole<Guid>>()
+            services
+                .AddIdentity<User, IdentityRole<Guid>>()
                 .AddEntityFrameworkStores<AuthenticationContext>()
                 .AddDefaultTokenProviders();
 
@@ -56,6 +53,8 @@ namespace Familia.Ead.Infrastructure.Bootstrap.Providers
 
                 ClockSkew = TimeSpan.Zero
             };
+            
+            services.AddAuthorization();
 
             services.AddAuthentication(x =>
             {

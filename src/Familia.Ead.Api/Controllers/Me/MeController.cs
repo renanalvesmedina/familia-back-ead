@@ -1,13 +1,9 @@
-﻿using Familia.Ead.Api.Controllers.Courses.Inputs;
-using Familia.Ead.Api.Controllers.Me.Inputs;
-using Familia.Ead.Application.Requests.Courses.CreateCourse;
+﻿using Familia.Ead.Api.Controllers.Me.Inputs;
 using Familia.Ead.Application.Requests.Me.CreateHistoryStudent;
 using Familia.Ead.Application.Requests.Me.EditMyProfile;
 using Familia.Ead.Application.Requests.Me.GetMyCourses;
 using Familia.Ead.Application.Requests.Me.GetMyProfile;
 using Familia.Ead.Application.Requests.Me.SearchMyClasses;
-using Familia.Ead.Domain.Entities.Authentication;
-using Familia.Ead.Infrastructure.Bootstrap.Attributes;
 using Lumini.Common.Model.Presenter.WebApi;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -82,7 +78,6 @@ namespace Familia.Ead.Api.Controllers.Me
         /// Search courses of student
         /// </summary>
         /// <returns>Return list of courses by user id</returns>
-        [ClaimsAuthorize(ClaimConstants.CLAIM_TYPE_COURSE, ClaimConstants.ACTION_VIEW)]
         [HttpGet("courses")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status422UnprocessableEntity)]
@@ -107,7 +102,6 @@ namespace Familia.Ead.Api.Controllers.Me
         /// </summary>
         /// <param name="courseId">Course id to filter classes</param>
         /// <returns>Return list of classes</returns>
-        [ClaimsAuthorize(ClaimConstants.CLAIM_TYPE_CLASS, ClaimConstants.ACTION_VIEW)]
         [HttpGet("classes")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status422UnprocessableEntity)]
@@ -133,7 +127,6 @@ namespace Familia.Ead.Api.Controllers.Me
         /// </summary>
         /// <param name="input">Course Data</param>
         /// <returns>Course Id</returns>
-        [ClaimsAuthorize(ClaimConstants.CLAIM_TYPE_STUDENT, ClaimConstants.ACTION_CREATE)]
         [HttpPost("history/register")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status422UnprocessableEntity)]

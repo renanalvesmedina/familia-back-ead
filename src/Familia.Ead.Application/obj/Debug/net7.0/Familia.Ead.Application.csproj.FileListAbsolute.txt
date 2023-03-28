@@ -1,8 +1,3 @@
-C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\obj\Debug\net7.0\Familia.Ead.Application.csproj.AssemblyReference.cache
-C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\obj\Debug\net7.0\Familia.Ead.Application.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\obj\Debug\net7.0\Familia.Ead.Application.AssemblyInfoInputs.cache
-C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\obj\Debug\net7.0\Familia.Ead.Application.AssemblyInfo.cs
-C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\obj\Debug\net7.0\Familia.Ead.Application.csproj.CoreCompileInputs.cache
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\bin\Debug\net7.0\Lumini.Common.Model.xml
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\bin\Debug\net7.0\Familia.Ead.Application.deps.json
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\bin\Debug\net7.0\Familia.Ead.Application.dll
@@ -11,6 +6,11 @@ C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\bin\Deb
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\bin\Debug\net7.0\Familia.Ead.Infrastructure.dll
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\bin\Debug\net7.0\Familia.Ead.Infrastructure.pdb
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\bin\Debug\net7.0\Familia.Ead.Domain.pdb
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\obj\Debug\net7.0\Familia.Ead.Application.csproj.AssemblyReference.cache
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\obj\Debug\net7.0\Familia.Ead.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\obj\Debug\net7.0\Familia.Ead.Application.AssemblyInfoInputs.cache
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\obj\Debug\net7.0\Familia.Ead.Application.AssemblyInfo.cs
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\obj\Debug\net7.0\Familia.Ead.Application.csproj.CoreCompileInputs.cache
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\obj\Debug\net7.0\Familia.Ead.Application.csproj.CopyComplete
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\obj\Debug\net7.0\Familia.Ead.Application.dll
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\obj\Debug\net7.0\refint\Familia.Ead.Application.dll

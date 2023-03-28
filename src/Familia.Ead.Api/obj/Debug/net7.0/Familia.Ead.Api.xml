@@ -9,7 +9,14 @@
             Authentication
             </summary>
             <param name="input">Login Data</param>
-            <returns>Return jwt token</returns>
+            <returns>Return token</returns>
+        </member>
+        <member name="M:Familia.Ead.Api.Controllers.Authentication.AuthenticationController.Create(Familia.Ead.Api.Controllers.Authentication.Inputs.CreateUserInput)">
+            <summary>
+            Creates a new user
+            </summary>
+            <param name="input">The User data</param>
+            <returns>The id of the user created</returns>
         </member>
         <member name="T:Familia.Ead.Api.Controllers.Authentication.Inputs.AuthenticationInput">
             <summary>
@@ -24,6 +31,41 @@
         <member name="P:Familia.Ead.Api.Controllers.Authentication.Inputs.AuthenticationInput.Password">
             <summary>
             Password
+            </summary>
+        </member>
+        <member name="T:Familia.Ead.Api.Controllers.Authentication.Inputs.CreateUserInput">
+            <summary>
+            Criação de usuário para acesso a plataforma.
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Authentication.Inputs.CreateUserInput.FullName">
+            <summary>
+            Nome completo do usuário.
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Authentication.Inputs.CreateUserInput.Email">
+            <summary>
+            Email válido para login.
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Authentication.Inputs.CreateUserInput.Password">
+            <summary>
+            Senha com letras, numeros e símbolo.
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Authentication.Inputs.CreateUserInput.Phone">
+            <summary>
+            Número de telefone válido.
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Authentication.Inputs.CreateUserInput.Sexo">
+            <summary>
+            Masculino = M | Feminino = F  
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Authentication.Inputs.CreateUserInput.Perfil">
+            <summary>
+            Defina o perfil do Usuário: Admin, Manager, Student
             </summary>
         </member>
         <member name="M:Familia.Ead.Api.Controllers.Class.ClassController.CreateClass(Familia.Ead.Api.Controllers.Class.Inputs.CreateClassInput)">

@@ -1,9 +1,3 @@
-C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\obj\Debug\net7.0\Familia.Ead.Api.csproj.AssemblyReference.cache
-C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\obj\Debug\net7.0\Familia.Ead.Api.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\obj\Debug\net7.0\Familia.Ead.Api.AssemblyInfoInputs.cache
-C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\obj\Debug\net7.0\Familia.Ead.Api.AssemblyInfo.cs
-C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\obj\Debug\net7.0\Familia.Ead.Api.csproj.CoreCompileInputs.cache
-C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\obj\Debug\net7.0\Familia.Ead.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\bin\Debug\net7.0\Lumini.Common.Model.xml
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\bin\Debug\net7.0\Lumini.Common.Model.Presenter.WebApi.xml
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\bin\Debug\net7.0\appsettings.Development.json
@@ -25,7 +19,6 @@ C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\bin\Debug\net7.
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\bin\Debug\net7.0\MediatR.dll
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\bin\Debug\net7.0\MediatR.Contracts.dll
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\bin\Debug\net7.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
-C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\bin\Debug\net7.0\Microsoft.AspNet.Identity.Core.dll
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
@@ -83,6 +76,13 @@ C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\bin\Debug\net7.
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\bin\Debug\net7.0\Familia.Ead.Application.pdb
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\bin\Debug\net7.0\Familia.Ead.Domain.pdb
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\bin\Debug\net7.0\Familia.Ead.Infrastructure.pdb
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\obj\Debug\net7.0\Familia.Ead.Api.csproj.AssemblyReference.cache
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\obj\Debug\net7.0\Familia.Ead.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\obj\Debug\net7.0\Familia.Ead.Api.AssemblyInfoInputs.cache
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\obj\Debug\net7.0\Familia.Ead.Api.AssemblyInfo.cs
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\obj\Debug\net7.0\Familia.Ead.Api.csproj.CoreCompileInputs.cache
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\obj\Debug\net7.0\Familia.Ead.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\obj\Debug\net7.0\Familia.Ead.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\obj\Debug\net7.0\staticwebassets\msbuild.Familia.Ead.Api.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\obj\Debug\net7.0\staticwebassets\msbuild.build.Familia.Ead.Api.props
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Familia.Ead.Api.props

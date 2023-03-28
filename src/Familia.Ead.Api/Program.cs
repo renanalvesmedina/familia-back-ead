@@ -1,3 +1,4 @@
+using Familia.Ead.Application.Utils;
 using Familia.Ead.Infrastructure.Bootstrap;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
@@ -57,6 +58,9 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddLuminiPresenter();
 builder.Services.ConfigureServices(builder.Configuration);
+
+//DI
+builder.Services.AddScoped<IValidators, Validators>();
 
 builder.Services.AddCors(options =>
 {
