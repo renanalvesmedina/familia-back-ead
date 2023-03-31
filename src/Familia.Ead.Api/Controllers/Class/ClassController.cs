@@ -34,14 +34,15 @@ namespace Familia.Ead.Api.Controllers.Class
                 ClassName = input.className,
                 CourseId = input.courseId,
                 Video = input.video,
-                Description = input.description
+                Description = input.description,
+                Thumb = input.Thumb,
+                LaunchDate = input.LaunchDate
             };
 
             var result = await Send(request);
 
             return Created(result);
         }
-
 
         /// <summary>
         /// Search all class of course

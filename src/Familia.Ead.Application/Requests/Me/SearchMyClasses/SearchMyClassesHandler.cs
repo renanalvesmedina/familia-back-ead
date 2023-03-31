@@ -25,7 +25,7 @@ namespace Familia.Ead.Application.Requests.Me.SearchMyClasses
             if (request.CourseId == Guid.Empty)
                 return BusinessRuleViolated(ErrorCatalog.Course.NotFound);
 
-            var classes = await _context.Classes.Where(c => c.CourseId == request.CourseId).ToListAsync(cancellationToken);
+            var classes = await _context.Classes.Where(c => c.CourseId == request.CourseId && c.LaunchDate <= DateTime.Now).OrderBy(c => c.OrderId).ToListAsync(cancellationToken);
 
             foreach (var _class in classes)
             {

@@ -24,5 +24,15 @@
         /// Description of class
         /// </summary>
         public string description { get; set; }
+
+        /// <summary>
+        /// Link thumb da aula
+        /// </summary>
+        public string Thumb { get; set; }
+
+        /// <summary>
+        /// Data em que a aula deve ser lançada
+        /// </summary>
+        public DateTime LaunchDate { get; set; }
     }
 }

@@ -114,6 +114,16 @@
             Description of class
             </summary>
         </member>
+        <member name="P:Familia.Ead.Api.Controllers.Class.Inputs.CreateClassInput.Thumb">
+            <summary>
+            Link thumb da aula
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Class.Inputs.CreateClassInput.LaunchDate">
+            <summary>
+            Data em que a aula deve ser lançada
+            </summary>
+        </member>
         <member name="T:Familia.Ead.Api.Controllers.Courses.CourseController">
             <summary>
             Course Operations

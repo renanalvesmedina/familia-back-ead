@@ -38,7 +38,9 @@ namespace Familia.Ead.Application.Requests.Classes.CreateClass
                 Video = request.Video,
                 Course = course,
                 CourseId = request.CourseId,
-                Workload = 1
+                Workload = 1,
+                Thumb = !request.Thumb.Equals("") ? request.Thumb : course.CardUri,
+                LaunchDate = request.LaunchDate
             };
 
             await _context.Classes.AddAsync(_class, cancellationToken);
