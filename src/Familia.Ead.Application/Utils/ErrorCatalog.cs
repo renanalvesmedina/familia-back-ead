@@ -21,6 +21,7 @@ namespace Familia.Ead.Application.Utils
             public static ErrorCatalogEntry InvalidSexo => ("FAMILY-AUTHENTICATION-08", "Sexo inválido, deve ser prenchido M para Masculino e F para Feminino!");
             public static ErrorCatalogEntry InvalidPhone => ("FAMILY-AUTHENTICATION-09", "Telefone inválido, deve ser prenchido somente os números com DDD, Ex.: 27991920101");
             public static ErrorCatalogEntry InvalidRole => ("FAMILY-AUTHENTICATION-10", "Adicione um perfil válido para o usuário!");
+            public static ErrorCatalogEntry ResetPasswordFailed => ("FAMILY-AUTHENTICATION-11", "Erro para resetar senha!");
         }
 
         public static class Course

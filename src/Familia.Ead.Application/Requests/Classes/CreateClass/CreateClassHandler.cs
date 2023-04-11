@@ -40,7 +40,7 @@ namespace Familia.Ead.Application.Requests.Classes.CreateClass
                 CourseId = request.CourseId,
                 Workload = 1,
                 Thumb = !request.Thumb.Equals("") ? request.Thumb : course.CardUri,
-                LaunchDate = request.LaunchDate
+                LaunchDate = request.LaunchDate,
             };
 
             await _context.Classes.AddAsync(_class, cancellationToken);

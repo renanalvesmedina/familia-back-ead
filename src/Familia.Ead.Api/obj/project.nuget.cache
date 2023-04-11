@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8f6s+ds1ES+5iEZm177ceQe8uVoGWJj04azDTFa3Id6A4BR6A7Qz/u4Gh9dggCF8aqU5WjLKlbw8JVPCnQXIIg==",
+  "dgSpecHash": "LGViD1Ns9oRml+ezgUiPsGL5jTvTA98tPrP7+Ke08/X40Eq69zpPQ8bFXn7VDoqiihKXO8r6jOJLyWR9B0r3hA==",
   "success": true,
   "projectFilePath": "C:\\Users\\alves\\source\\repos\\familia-back-ead\\src\\Familia.Ead.Api\\Familia.Ead.Api.csproj",
   "expectedPackageFiles": [
@@ -114,5 +114,30 @@
     "C:\\Users\\alves\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\alves\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://10.1.11.110/Superdigital/_packaging/Package-Superdigital/nuget/v3/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    },
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://sw10vtfs02/Superdigital/_packaging/Package-Superdigital/nuget/v3/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    },
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://10.30.2.15:8020/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    },
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://10.1.10.31:8020/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
 }

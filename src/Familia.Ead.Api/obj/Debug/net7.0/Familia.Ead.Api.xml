@@ -18,6 +18,13 @@
             <param name="input">The User data</param>
             <returns>The id of the user created</returns>
         </member>
+        <member name="M:Familia.Ead.Api.Controllers.Authentication.AuthenticationController.ResetPassword(Familia.Ead.Api.Controllers.Authentication.Inputs.ResetPasswordInput)">
+            <summary>
+            Reset Password
+            </summary>
+            <param name="input">The user data</param>
+            <returns></returns>
+        </member>
         <member name="T:Familia.Ead.Api.Controllers.Authentication.Inputs.AuthenticationInput">
             <summary>
             Authentication Data
@@ -66,6 +73,26 @@
         <member name="P:Familia.Ead.Api.Controllers.Authentication.Inputs.CreateUserInput.Perfil">
             <summary>
             Defina o perfil do Usuário: Admin, Manager, Student
+            </summary>
+        </member>
+        <member name="T:Familia.Ead.Api.Controllers.Authentication.Inputs.ResetPasswordInput">
+            <summary>
+            Reset Password Input
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Authentication.Inputs.ResetPasswordInput.Email">
+            <summary>
+            Email of user
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Authentication.Inputs.ResetPasswordInput.Password">
+            <summary>
+            New password
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Authentication.Inputs.ResetPasswordInput.Token">
+            <summary>
+            Token of forgot password
             </summary>
         </member>
         <member name="M:Familia.Ead.Api.Controllers.Class.ClassController.CreateClass(Familia.Ead.Api.Controllers.Class.Inputs.CreateClassInput)">

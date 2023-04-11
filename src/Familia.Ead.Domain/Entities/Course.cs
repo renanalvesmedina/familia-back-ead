@@ -12,6 +12,6 @@
         public DateTime UpdatedOn { get; set; }
 
         public virtual IList<Class> Classes { get; set; }
-        public virtual Enrollment Enrollment { get; set; }
+        public virtual IList<Enrollment> Enrollments { get; set; }
     }
 }

@@ -23,7 +23,12 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://10.1.10.31:8020/nuget": {},
+          "http://10.1.11.110/Superdigital/_packaging/Package-Superdigital/nuget/v3/index.json": {},
+          "http://10.30.2.15:8020/nuget": {},
+          "http://sw10vtfs02/Superdigital/_packaging/Package-Superdigital/nuget/v3/index.json": {},
           "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/Superdigital-HoldCo/_packaging/Superdigital-HoldCo/nuget/v3/index.json": {},
           "https://pkgs.dev.azure.com/n3devops/_packaging/LuminiTec/nuget/v3/index.json": {}
         },
         "frameworks": {
@@ -90,7 +95,12 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://10.1.10.31:8020/nuget": {},
+          "http://10.1.11.110/Superdigital/_packaging/Package-Superdigital/nuget/v3/index.json": {},
+          "http://10.30.2.15:8020/nuget": {},
+          "http://sw10vtfs02/Superdigital/_packaging/Package-Superdigital/nuget/v3/index.json": {},
           "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/Superdigital-HoldCo/_packaging/Superdigital-HoldCo/nuget/v3/index.json": {},
           "https://pkgs.dev.azure.com/n3devops/_packaging/LuminiTec/nuget/v3/index.json": {}
         },
         "frameworks": {

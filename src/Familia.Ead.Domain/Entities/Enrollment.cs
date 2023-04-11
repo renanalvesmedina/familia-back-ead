@@ -8,6 +8,6 @@
         public DateTime UpdatedOn { get; set; }
 
         public Guid CourseId { get; set; }
-        public virtual Course Course { get; set; }
+        public Course Course { get; set; }
     }
 }

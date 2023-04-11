@@ -27,7 +27,6 @@ namespace Familia.Ead.Application.Requests.Authentication.GenerateToken
 
             var expirationDate = DateTime.Now.AddHours(4);
 
-
             var jwt = new JwtSecurityToken(
                 issuer: _jwtOptions.Issuer,
                 audience: _jwtOptions.Audience,

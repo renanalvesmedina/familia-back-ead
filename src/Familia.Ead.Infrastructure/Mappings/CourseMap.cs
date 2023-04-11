@@ -16,7 +16,7 @@ namespace Familia.Ead.Infrastructure.Mappings
                 .WithOne(z => z.Course);
 
             builder
-                .HasOne(c => c.Enrollment)
+                .HasMany(c => c.Enrollments)
                 .WithOne(z => z.Course);
         }
     }

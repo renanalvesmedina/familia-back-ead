@@ -15,7 +15,7 @@ namespace Familia.Ead.Infrastructure.Mappings
 
             builder
                 .HasOne(x => x.Course)
-                .WithOne(s => s.Enrollment)
+                .WithMany(s => s.Enrollments)
                 .OnDelete(DeleteBehavior.NoAction)
                 .IsRequired();
 
