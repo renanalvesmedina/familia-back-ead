@@ -3,6 +3,7 @@ using Familia.Ead.Application.Requests.Me.CreateHistoryStudent;
 using Familia.Ead.Application.Requests.Me.EditMyProfile;
 using Familia.Ead.Application.Requests.Me.GetMyCourses;
 using Familia.Ead.Application.Requests.Me.GetMyProfile;
+using Familia.Ead.Application.Requests.Me.ResetMyPassword;
 using Familia.Ead.Application.Requests.Me.SearchMyClasses;
 using Lumini.Common.Model.Presenter.WebApi;
 using Microsoft.AspNetCore.Authorization;
@@ -145,6 +146,33 @@ namespace Familia.Ead.Api.Controllers.Me
             var result = await Send(request);
 
             return Created(result);
+        }
+
+
+        /// <summary>
+        /// Reset password of user
+        /// </summary>
+        /// <param name="input">The password reset data</param>
+        /// <returns>Course Id</returns>
+        [HttpPost("password/reset")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status422UnprocessableEntity)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
+        public async Task<ActionResult> ResetMyPassword(ResetMyPasswordInput input)
+        {
+            var request = new ResetMyPasswordRequest
+            {
+                UserId = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value,
+                CurrentPassword = input.CurrentPassword,
+                NewPassword = input.NewPassword,
+                ConfirmPassword = input.ConfirmPassword,
+            };
+
+            var result = await Send(request);
+
+            return Ok(result);
         }
     }
 }

@@ -247,6 +247,26 @@
             Sexo: M - Masculino | F - Feminino
             </summary>
         </member>
+        <member name="T:Familia.Ead.Api.Controllers.Me.Inputs.ResetMyPasswordInput">
+            <summary>
+            Reset my password
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Me.Inputs.ResetMyPasswordInput.CurrentPassword">
+            <summary>
+            Senha atual
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Me.Inputs.ResetMyPasswordInput.NewPassword">
+            <summary>
+            Nova senha
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Me.Inputs.ResetMyPasswordInput.ConfirmPassword">
+            <summary>
+            Confirme a nova senha
+            </summary>
+        </member>
         <member name="T:Familia.Ead.Api.Controllers.Me.MeController">
             <summary>
             User operations
@@ -282,6 +302,13 @@
             Create a new course
             </summary>
             <param name="input">Course Data</param>
+            <returns>Course Id</returns>
+        </member>
+        <member name="M:Familia.Ead.Api.Controllers.Me.MeController.ResetMyPassword(Familia.Ead.Api.Controllers.Me.Inputs.ResetMyPasswordInput)">
+            <summary>
+            Reset password of user
+            </summary>
+            <param name="input">The password reset data</param>
             <returns>Course Id</returns>
         </member>
     </members>
