@@ -311,5 +311,12 @@
             <param name="input">The password reset data</param>
             <returns>Course Id</returns>
         </member>
+        <member name="M:Familia.Ead.Api.Controllers.Me.MeController.UpdateMyAvatar(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Update profile avatar of user
+            </summary>
+            <param name="image">The image</param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

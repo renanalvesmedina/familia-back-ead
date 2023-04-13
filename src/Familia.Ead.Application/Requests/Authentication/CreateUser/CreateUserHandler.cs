@@ -1,5 +1,6 @@
 ﻿using Familia.Ead.Application.Utils;
 using Familia.Ead.Domain.Entities.Authentication;
+using Familia.Ead.Infrastructure.DbContexts;
 using Lumini.Common.Mediator;
 using Lumini.Common.Model;
 using Microsoft.AspNetCore.Identity;
@@ -10,13 +11,15 @@ namespace Familia.Ead.Application.Requests.Authentication.CreateUser
     {
         private readonly UserManager<User> _userManager;
         private readonly RoleManager<IdentityRole<Guid>> _roleManager;
+        private readonly AuthenticationContext _context;
         private readonly IValidators _validators;
 
-        public CreateUserHandler(UserManager<User> userManager, IValidators validators, RoleManager<IdentityRole<Guid>> roleManager)
+        public CreateUserHandler(UserManager<User> userManager, IValidators validators, RoleManager<IdentityRole<Guid>> roleManager, AuthenticationContext context)
         {
             _userManager = userManager;
             _validators = validators;
             _roleManager = roleManager;
+            _context = context;
         }
 
         public override async Task<Result> Handle(CreateUserRequest request, CancellationToken cancellationToken)
@@ -62,7 +65,7 @@ namespace Familia.Ead.Application.Requests.Authentication.CreateUser
                 }
             }
 
-            // Adicionar a role de perfil do usuario
+            // Adiciona a role de perfil do usuario
             var roleResult = await _userManager.AddToRoleAsync(user, request.Perfil);
 
             if(!roleResult.Succeeded)
@@ -72,6 +75,16 @@ namespace Familia.Ead.Application.Requests.Authentication.CreateUser
                     return BusinessRuleViolated(ErrorCatalog.Authentication.NotCreated(error.Description));
                 }
             }
+
+            // Adiciona as claims do perfil Student
+            var _claims = ClaimConstants.StudentClaims(user.Id);
+
+            foreach (var claim in _claims)
+            {
+                await _context.UserClaims.AddAsync(claim, cancellationToken);
+            };
+
+            await _context.SaveChangesAsync(cancellationToken);
 
             return Success();
         }

@@ -25,9 +25,11 @@ namespace Familia.Ead.Application.Requests.Me.GetMyProfile
 
             var result = new GetMyProfileResponse
             {
+                FullName = user.FullName,
                 Email = user.Email,
                 Sexo = user.Sexo,
-                Telefone = user.PhoneNumber
+                Telefone = user.PhoneNumber,
+                ProfilePicture = user.ProfilePictureUri,
             };
 
             return Success(result);

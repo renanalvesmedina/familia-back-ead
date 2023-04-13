@@ -4,7 +4,8 @@ namespace Familia.Ead.Application.Utils
 {
     public class ErrorCatalog
     {
-        public static ErrorCatalogEntry Generic => ("FAMILY-EAD-GEN-01", "Generic Error!");
+        public static ErrorCatalogEntry Generic => ("FAMILY-EAD-GEN-00", "Generic Error!");
+        public static ErrorCatalogEntry GenericWithMessage(string desc) => ("FAMILY-EAD-GEN-01", desc);
         public static ErrorCatalogEntry InvalidDocument => ("FAMILY-EAD-GEN-02", "CPF Inválido!");
         public static ErrorCatalogEntry InvalidEmail => ("FAMILY-EAD-GEN-03", "Email inválido!");
 

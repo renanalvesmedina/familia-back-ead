@@ -5,8 +5,10 @@ using Familia.Ead.Application.Requests.Me.GetMyCourses;
 using Familia.Ead.Application.Requests.Me.GetMyProfile;
 using Familia.Ead.Application.Requests.Me.ResetMyPassword;
 using Familia.Ead.Application.Requests.Me.SearchMyClasses;
+using Familia.Ead.Application.Requests.Me.UpdateMyAvatar;
 using Lumini.Common.Model.Presenter.WebApi;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -168,6 +170,31 @@ namespace Familia.Ead.Api.Controllers.Me
                 CurrentPassword = input.CurrentPassword,
                 NewPassword = input.NewPassword,
                 ConfirmPassword = input.ConfirmPassword,
+            };
+
+            var result = await Send(request);
+
+            return Ok(result);
+        }
+
+
+        /// <summary>
+        /// Update profile avatar of user
+        /// </summary>
+        /// <param name="image">The image</param>
+        /// <returns></returns>
+        [HttpPut("profile/avatar")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status422UnprocessableEntity)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
+        public async Task<ActionResult> UpdateMyAvatar(IFormFile image)
+        {
+            var request = new UpdateMyAvatarRequest
+            {
+                UserId = Guid.Parse(_httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value),
+                Image = image
             };
 
             var result = await Send(request);

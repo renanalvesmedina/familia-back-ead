@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "b49ddpUpJ8kV6w7srzVTaLsaeq8a2a32tyXlRQmf9Kkj2l47ajk86/nWRZsemeRpXlxKemah2OQvmZJEM+qGPA==",
+  "dgSpecHash": "M1I0L/VGnyY3bdiGA7IO7gZvIG2+osrplrcj/jbTqHWVUlsKEHGzN6HAIIgurUeCIFOvMYrlEfWZM0571LP1lw==",
   "success": true,
   "projectFilePath": "C:\\Users\\alves\\source\\repos\\familia-back-ead\\src\\Familia.Ead.Domain\\Familia.Ead.Domain.csproj",
   "expectedPackageFiles": [
@@ -21,30 +21,5 @@
     "C:\\Users\\alves\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.25.1\\microsoft.identitymodel.tokens.6.25.1.nupkg.sha512",
     "C:\\Users\\alves\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1803",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://10.1.11.110/Superdigital/_packaging/Package-Superdigital/nuget/v3/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
-    },
-    {
-      "code": "NU1803",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://sw10vtfs02/Superdigital/_packaging/Package-Superdigital/nuget/v3/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
-    },
-    {
-      "code": "NU1803",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://10.30.2.15:8020/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
-    },
-    {
-      "code": "NU1803",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://10.1.10.31:8020/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
-    }
-  ]
+  "logs": []
 }

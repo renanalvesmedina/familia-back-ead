@@ -61,6 +61,7 @@ builder.Services.ConfigureServices(builder.Configuration);
 
 //DI
 builder.Services.AddScoped<IValidators, Validators>();
+builder.Services.AddScoped<IUploadFileFactory, UploadFileFactory>();
 
 builder.Services.AddCors(options =>
 {

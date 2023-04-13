@@ -49,7 +49,7 @@ namespace Familia.Ead.Application.Requests.Me.SearchMyClasses
                 {
                     var classResult = new SearchMyClassesResponse
                     {
-                        ClassId = _class.Id,
+                        ClassId = studentHistory.ClassId,
                         ClassName = _class.Name,
                         OrderId = _class.OrderId,
                         IsPending = false,

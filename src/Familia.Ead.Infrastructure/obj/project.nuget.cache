@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6HJB2oQmcEQwpikvPTbGT8dHhIWzYxl2GunBAoQW34QRfecaWGBg5Y9soxy2sSCZjd6IcY0Sigc5dJgtNB5YZA==",
+  "dgSpecHash": "fB9PHFjQb0zLcls2h3XpD96ZTBz65PQ8lE8P0UPvyPykXilE9nVd8V5Vv9WM/2HB0U+Stc3by35IJXKVJLhCuw==",
   "success": true,
   "projectFilePath": "C:\\Users\\alves\\source\\repos\\familia-back-ead\\src\\Familia.Ead.Infrastructure\\Familia.Ead.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -104,30 +104,5 @@
     "C:\\Users\\alves\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\alves\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1803",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://10.1.11.110/Superdigital/_packaging/Package-Superdigital/nuget/v3/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
-    },
-    {
-      "code": "NU1803",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://sw10vtfs02/Superdigital/_packaging/Package-Superdigital/nuget/v3/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
-    },
-    {
-      "code": "NU1803",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://10.30.2.15:8020/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
-    },
-    {
-      "code": "NU1803",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://10.1.10.31:8020/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
-    }
-  ]
+  "logs": []
 }
