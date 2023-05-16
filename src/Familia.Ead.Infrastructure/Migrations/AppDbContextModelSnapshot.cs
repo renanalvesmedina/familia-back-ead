@@ -22,6 +22,23 @@ namespace Familia.Ead.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Familia.Ead.Domain.Entities.Authentication.UserLogins", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("AccessedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserLogins");
+                });
+
             modelBuilder.Entity("Familia.Ead.Domain.Entities.Class", b =>
                 {
                     b.Property<Guid>("Id")

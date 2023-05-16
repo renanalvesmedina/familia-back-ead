@@ -19,7 +19,5 @@ namespace Familia.Ead.Infrastructure.Bootstrap.Providers
 
             return services;
         }
-
-        
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Familia.Ead.Application.Requests.Authentication.GenerateToken;
+using Familia.Ead.Application.Requests.Authentication.RegisterLogin;
 using Familia.Ead.Application.Utils;
 using Familia.Ead.Domain.Entities.Authentication;
 using Lumini.Common.Mediator;
@@ -13,7 +14,7 @@ namespace Familia.Ead.Application.Requests.Authentication.Authenticate
         private readonly SignInManager<User> _signInManager;
         private readonly UserManager<User> _userManager;
         private readonly IMediator _mediator;
-
+        
         public AuthenticationHandler(UserManager<User> userManager, IMediator mediator, SignInManager<User> signInManager)
         {
             _userManager = userManager;
@@ -60,6 +61,8 @@ namespace Familia.Ead.Application.Requests.Authentication.Authenticate
                 Token = tokenResponse.Value.Token,
                 Expiration = tokenResponse.Value.Expiration
             };
+
+            await _mediator.Send(new RegisterLoginRequest { UserId = user.Id }, cancellationToken);
 
             return Success(result);
         }

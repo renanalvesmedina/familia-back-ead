@@ -318,5 +318,62 @@
             <param name="image">The image</param>
             <returns></returns>
         </member>
+        <member name="M:Familia.Ead.Api.Controllers.Student.StudentController.SearchStudentHistory(System.Guid)">
+            <summary>
+            Search all class of course
+            </summary>
+            <param name="studentId">Student id to filter classes</param>
+            <returns>Return list of classes</returns>
+        </member>
+        <member name="T:Familia.Ead.Api.Controllers.Users.Input.EditUserInput">
+            <summary>
+            Edit User
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Users.Input.EditUserInput.FullName">
+            <summary>
+            Nome completo
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Users.Input.EditUserInput.Phone">
+            <summary>
+            Telefone
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Users.Input.EditUserInput.Gender">
+            <summary>
+            Genero
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Users.Input.EditUserInput.Profiles">
+            <summary>
+            Lista de Perfis: Admin, Manager, Student
+            </summary>
+        </member>
+        <member name="T:Familia.Ead.Api.Controllers.Users.Input.SearchUsersInput">
+            <summary>
+            Search Users Input filters
+            </summary>
+        </member>
+        <member name="M:Familia.Ead.Api.Controllers.Users.UserController.SearchUsers">
+            <summary>
+            Search all users
+            </summary>
+            <returns>Return list of users</returns>
+        </member>
+        <member name="M:Familia.Ead.Api.Controllers.Users.UserController.GetUser(System.Guid)">
+            <summary>
+            Get user
+            </summary>
+            <returns>Return user data</returns>
+        </member>
+        <member name="M:Familia.Ead.Api.Controllers.Users.UserController.EditUser(System.Guid,Familia.Ead.Api.Controllers.Users.Input.EditUserInput)">
+            <summary>
+            Edit user
+            </summary>
+            <param name="UserId">User id</param>
+            <param name="input">User Data</param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

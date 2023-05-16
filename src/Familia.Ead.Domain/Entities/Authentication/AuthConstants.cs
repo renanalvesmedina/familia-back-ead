@@ -23,6 +23,137 @@ namespace Familia.Ead.Domain.Entities.Authentication
         public const string ACTION_DELETE = "Delete";
         public const string ACTION_VIEW = "View";
 
+        public static IEnumerable<IdentityUserClaim<Guid>> AdminClaims(Guid userId)
+        {
+            return new List<IdentityUserClaim<Guid>>
+            {
+                new IdentityUserClaim<Guid>()
+                {
+                    UserId = userId,
+                    ClaimType = CLAIM_TYPE_MANAGER,
+                    ClaimValue = ACTION_CREATE
+                },
+                new IdentityUserClaim<Guid>()
+                {
+                    UserId = userId,
+                    ClaimType = CLAIM_TYPE_MANAGER,
+                    ClaimValue = ACTION_EDIT
+                },
+                new IdentityUserClaim<Guid>()
+                {
+                    UserId = userId,
+                    ClaimType = CLAIM_TYPE_MANAGER,
+                    ClaimValue = ACTION_DELETE
+                },
+                new IdentityUserClaim<Guid>()
+                {
+                    UserId = userId,
+                    ClaimType = CLAIM_TYPE_MANAGER,
+                    ClaimValue = ACTION_VIEW
+                },
+
+                new IdentityUserClaim<Guid>()
+                {
+                    UserId = userId,
+                    ClaimType = CLAIM_TYPE_STUDENT,
+                    ClaimValue = ACTION_CREATE
+                },
+                new IdentityUserClaim<Guid>()
+                {
+                    UserId = userId,
+                    ClaimType = CLAIM_TYPE_STUDENT,
+                    ClaimValue = ACTION_EDIT
+                },
+                new IdentityUserClaim<Guid>()
+                {
+                    UserId = userId,
+                    ClaimType = CLAIM_TYPE_STUDENT,
+                    ClaimValue = ACTION_DELETE
+                },
+                new IdentityUserClaim<Guid>()
+                {
+                    UserId = userId,
+                    ClaimType = CLAIM_TYPE_STUDENT,
+                    ClaimValue = ACTION_VIEW
+                },
+
+                new IdentityUserClaim<Guid>()
+                {
+                    UserId = userId,
+                    ClaimType = CLAIM_TYPE_ENROLLMENT,
+                    ClaimValue = ACTION_CREATE
+                },
+                new IdentityUserClaim<Guid>()
+                {
+                    UserId = userId,
+                    ClaimType = CLAIM_TYPE_ENROLLMENT,
+                    ClaimValue = ACTION_EDIT
+                },
+                new IdentityUserClaim<Guid>()
+                {
+                    UserId = userId,
+                    ClaimType = CLAIM_TYPE_ENROLLMENT,
+                    ClaimValue = ACTION_DELETE
+                },
+                new IdentityUserClaim<Guid>()
+                {
+                    UserId = userId,
+                    ClaimType = CLAIM_TYPE_ENROLLMENT,
+                    ClaimValue = ACTION_VIEW
+                },
+
+                new IdentityUserClaim<Guid>()
+                {
+                    UserId = userId,
+                    ClaimType = CLAIM_TYPE_COURSE,
+                    ClaimValue = ACTION_CREATE
+                },
+                new IdentityUserClaim<Guid>()
+                {
+                    UserId = userId,
+                    ClaimType = CLAIM_TYPE_COURSE,
+                    ClaimValue = ACTION_EDIT
+                },
+                new IdentityUserClaim<Guid>()
+                {
+                    UserId = userId,
+                    ClaimType = CLAIM_TYPE_COURSE,
+                    ClaimValue = ACTION_DELETE
+                },
+                new IdentityUserClaim<Guid>()
+                {
+                    UserId = userId,
+                    ClaimType = CLAIM_TYPE_COURSE,
+                    ClaimValue = ACTION_VIEW
+                },
+
+                new IdentityUserClaim<Guid>()
+                {
+                    UserId = userId,
+                    ClaimType = CLAIM_TYPE_CLASS,
+                    ClaimValue = ACTION_CREATE
+                },
+                new IdentityUserClaim<Guid>()
+                {
+                    UserId = userId,
+                    ClaimType = CLAIM_TYPE_CLASS,
+                    ClaimValue = ACTION_EDIT
+                },
+                new IdentityUserClaim<Guid>()
+                {
+                    UserId = userId,
+                    ClaimType = CLAIM_TYPE_CLASS,
+                    ClaimValue = ACTION_DELETE
+                },
+                new IdentityUserClaim<Guid>()
+                {
+                    UserId = userId,
+                    ClaimType = CLAIM_TYPE_CLASS,
+                    ClaimValue = ACTION_VIEW
+                },
+            };
+        }
+
         public static IEnumerable<IdentityUserClaim<Guid>> StudentClaims(Guid userId)
         {
             return new List<IdentityUserClaim<Guid>>

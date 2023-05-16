@@ -25,6 +25,11 @@ namespace Familia.Ead.Application.Utils
             public static ErrorCatalogEntry ResetPasswordFailed => ("FAMILY-AUTHENTICATION-11", "Erro para resetar senha!");
         }
 
+        public static class User
+        {
+            public static ErrorCatalogEntry NotEdited(string desc) => ("FAMILY-USER-00", desc);
+        }
+
         public static class Course
         {
             public static ErrorCatalogEntry NotFound => ("FAMILY-COURSE-01", "Curso não encontrado.");
