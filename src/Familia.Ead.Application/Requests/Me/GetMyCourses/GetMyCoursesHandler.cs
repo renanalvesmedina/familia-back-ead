@@ -16,7 +16,7 @@ namespace Familia.Ead.Application.Requests.Me.GetMyCourses
         {
             var result = new List<GetMyCoursesResponse>();
 
-            var enrolls = await _context.Enrollments.Where(x => x.StudentId == request.UserId).ToListAsync(cancellationToken);
+            var enrolls = await _context.Enrollments.Where(x => x.StudentId == request.UserId && x.Status == true).ToListAsync(cancellationToken);
 
             if (!enrolls.Any())
                 return NotFound(ErrorCatalog.Enrollment.NotFound);

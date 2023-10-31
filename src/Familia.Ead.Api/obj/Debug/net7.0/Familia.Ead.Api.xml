@@ -355,7 +355,7 @@
             Search Users Input filters
             </summary>
         </member>
-        <member name="M:Familia.Ead.Api.Controllers.Users.UserController.SearchUsers">
+        <member name="M:Familia.Ead.Api.Controllers.Users.UserController.SearchUsers(System.Int32,System.Int32)">
             <summary>
             Search all users
             </summary>

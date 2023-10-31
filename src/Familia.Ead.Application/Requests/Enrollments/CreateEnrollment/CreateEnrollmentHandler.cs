@@ -22,6 +22,7 @@ namespace Familia.Ead.Application.Requests.Enrollments.CreateEnrollment
             {
                 Id = Guid.NewGuid(),
                 StudentId = request.StudentId,
+                Status = true,
                 CourseId = request.CourseId,
                 CreatedOn = DateTime.Now
             };

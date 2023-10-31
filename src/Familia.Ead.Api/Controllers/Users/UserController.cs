@@ -26,9 +26,13 @@ namespace Familia.Ead.Api.Controllers.Users
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<IEnumerable<SearchUsersResponse>>> SearchUsers()
+        public async Task<ActionResult<IEnumerable<SearchUsersResponse>>> SearchUsers(int start = 0, int limit = 25)
         {
-            var request = new SearchUsersRequest();
+            var request = new SearchUsersRequest
+            {
+                Skip = start,
+                Take = limit
+            };
 
             var result = await Send(request);
 

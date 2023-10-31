@@ -17,7 +17,11 @@ namespace Familia.Ead.Application.Requests.Users.SearchUsers
 
         public override async Task<Result<IEnumerable<SearchUsersResponse>>> Handle(SearchUsersRequest request, CancellationToken cancellationToken)
         {
-            var users = await _userManager.Users.ToListAsync(cancellationToken);
+            var users = await _userManager.Users
+                                            .AsNoTracking()
+                                            .Skip(request.Skip)
+                                            .Take(request.Take)
+                                            .ToListAsync(cancellationToken);
 
             var userListResponse = new List<SearchUsersResponse>();
 

@@ -4,6 +4,7 @@
     {
         public Guid Id { get; set; }
         public Guid StudentId { get; set; }
+        public bool Status { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime UpdatedOn { get; set; }
 

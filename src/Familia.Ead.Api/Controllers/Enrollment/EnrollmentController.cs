@@ -26,7 +26,7 @@ namespace Familia.Ead.Api.Controllers.Enrollment
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
         public async Task<ActionResult> CreateEnrollment(CreateEnrollmentInput input)
-        {
+        { 
             var request = new CreateEnrollmentRequest
             {
                 StudentId = input.StudentId,
