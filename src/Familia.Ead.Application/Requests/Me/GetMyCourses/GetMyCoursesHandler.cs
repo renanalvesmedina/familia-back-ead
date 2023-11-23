@@ -25,14 +25,19 @@ namespace Familia.Ead.Application.Requests.Me.GetMyCourses
             {
                 var course = await _context.Courses.SingleOrDefaultAsync(x => x.Id == enrollment.CourseId, cancellationToken);
 
-                var studentClassHistory = await _context.StudentHistories.OrderBy(c => c.ViewingDate).LastOrDefaultAsync(
-                    x => x.StudentId == request.UserId
-                    && x.CourseId == enrollment.Course.Id,
-                    cancellationToken);
+                //var studentClassHistory = await _context.StudentHistories.OrderBy(c => c.ViewingDate).LastOrDefaultAsync(
+                //    x => x.StudentId == request.UserId
+                //    && x.CourseId == enrollment.Course.Id,
+                //    cancellationToken);
 
-                var lastClassViewed = studentClassHistory == null
+                var studentClassesHistory = await _context.StudentHistories
+                    .Where(x => x.StudentId == request.UserId && x.CourseId == enrollment.Course.Id)
+                    .OrderBy(c => c.ViewingDate)
+                    .ToListAsync(cancellationToken);
+
+                var lastClassViewed = !studentClassesHistory.Any()
                     ? await _context.Classes.Where(c => c.Course == course && c.OrderId == 1).Select(c => c.Id).SingleOrDefaultAsync(cancellationToken)
-                    : studentClassHistory.ClassId;
+                    : studentClassesHistory.Select(c => c.ClassId).LastOrDefault();
 
                 var courseResult = new GetMyCoursesResponse
                 {
@@ -40,6 +45,8 @@ namespace Familia.Ead.Application.Requests.Me.GetMyCourses
                     CourseName = course.CourseName,
                     CourseCardUri = course.CardUri,
                     LastClassAttendedId = lastClassViewed,
+                    TotalCourseClasses = course.Workload,
+                    TotalCompletedClasses = studentClassesHistory.DistinctBy(c => c.ClassId).Count()
                 };
 
                 result.Add(courseResult);

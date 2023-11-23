@@ -8,7 +8,6 @@ using Familia.Ead.Application.Requests.Me.SearchMyClasses;
 using Familia.Ead.Application.Requests.Me.UpdateMyAvatar;
 using Lumini.Common.Model.Presenter.WebApi;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 

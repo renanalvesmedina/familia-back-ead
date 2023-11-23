@@ -9,5 +9,7 @@
         public string CourseName { get; set; }
         public string CourseCardUri { get; set; }
         public Guid LastClassAttendedId { get; set; }
+        public int TotalCourseClasses { get; set; }
+        public int TotalCompletedClasses { get; set; }
     }
 }
