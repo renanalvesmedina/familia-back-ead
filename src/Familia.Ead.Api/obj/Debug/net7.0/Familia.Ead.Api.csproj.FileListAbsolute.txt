@@ -101,3 +101,4 @@ C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\obj\Debug\net7.
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\obj\Debug\net7.0\Familia.Ead.Api.pdb
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\obj\Debug\net7.0\Familia.Ead.Api.genruntimeconfig.cache
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\obj\Debug\net7.0\ref\Familia.Ead.Api.dll
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Api\obj\Debug\net7.0\Familia.Ead.Api.sourcelink.json

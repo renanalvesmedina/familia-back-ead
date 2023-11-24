@@ -10,3 +10,4 @@ C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Domain\obj\Debug\ne
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Domain\obj\Debug\net7.0\refint\Familia.Ead.Domain.dll
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Domain\obj\Debug\net7.0\Familia.Ead.Domain.pdb
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Domain\obj\Debug\net7.0\ref\Familia.Ead.Domain.dll
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Domain\obj\Debug\net7.0\Familia.Ead.Domain.sourcelink.json

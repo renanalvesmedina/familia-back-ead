@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Familia.Ead.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1891faedadcf1f186e7b4124cbf3cf93b3cfefab")]
 [assembly: System.Reflection.AssemblyProductAttribute("Familia.Ead.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Familia.Ead.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

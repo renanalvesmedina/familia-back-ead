@@ -76,13 +76,26 @@ namespace Familia.Ead.Application.Requests.Authentication.CreateUser
                 }
             }
 
-            // Adiciona as claims do perfil Student
-            var _claims = ClaimConstants.StudentClaims(user.Id);
-
-            foreach (var claim in _claims)
+            if(request.Perfil.Equals(RoleConstants.ROLE_STUDENT))
             {
-                await _context.UserClaims.AddAsync(claim, cancellationToken);
-            };
+                // Adiciona as claims do perfil Student
+                var _claims = ClaimConstants.StudentClaims(user.Id);
+
+                foreach (var claim in _claims)
+                {
+                    await _context.UserClaims.AddAsync(claim, cancellationToken);
+                };
+            }
+            else if(request.Perfil.Equals(RoleConstants.ROLE_ADMIN))
+            {
+                // Adiciona as claims do perfil Admin
+                var _claims = ClaimConstants.AdminClaims(user.Id);
+
+                foreach (var claim in _claims)
+                {
+                    await _context.UserClaims.AddAsync(claim, cancellationToken);
+                };
+            }
 
             await _context.SaveChangesAsync(cancellationToken);
 

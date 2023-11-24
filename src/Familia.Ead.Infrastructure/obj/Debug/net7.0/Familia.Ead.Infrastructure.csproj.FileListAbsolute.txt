@@ -15,3 +15,4 @@ C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Infrastructure\obj\
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Infrastructure\obj\Debug\net7.0\Familia.Ead.Infrastructure.pdb
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Infrastructure\obj\Debug\net7.0\Familia.Ead.Infrastructure.genruntimeconfig.cache
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Infrastructure\obj\Debug\net7.0\ref\Familia.Ead.Infrastructure.dll
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Infrastructure\obj\Debug\net7.0\Familia.Ead.Infrastructure.sourcelink.json

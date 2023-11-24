@@ -16,3 +16,4 @@ C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\obj\Deb
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\obj\Debug\net7.0\refint\Familia.Ead.Application.dll
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\obj\Debug\net7.0\Familia.Ead.Application.pdb
 C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\obj\Debug\net7.0\ref\Familia.Ead.Application.dll
+C:\Users\alves\source\repos\familia-back-ead\src\Familia.Ead.Application\obj\Debug\net7.0\Familia.Ead.Application.sourcelink.json
