@@ -52,7 +52,7 @@ namespace Familia.Ead.Api.Controllers.Authentication
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
-        public async Task<ActionResult> Create(CreateUserInput input)
+        public async Task<ActionResult<Guid>> Create(CreateUserInput input)
         {
             var request = new CreateUserRequest
             {

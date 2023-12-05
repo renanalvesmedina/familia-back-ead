@@ -28,6 +28,7 @@ namespace Familia.Ead.Application.Utils
         public static class User
         {
             public static ErrorCatalogEntry NotEdited(string desc) => ("FAMILY-USER-00", desc);
+            public static ErrorCatalogEntry NotFound => ("FAMILY-USER-01", "Usuário não encontrado.");
         }
 
         public static class Course

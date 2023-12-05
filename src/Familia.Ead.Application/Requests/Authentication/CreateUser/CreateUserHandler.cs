@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Familia.Ead.Application.Requests.Authentication.CreateUser
 {
-    public class CreateUserHandler : Handler<CreateUserRequest>
+    public class CreateUserHandler : Handler<CreateUserRequest, Guid>
     {
         private readonly UserManager<User> _userManager;
         private readonly RoleManager<IdentityRole<Guid>> _roleManager;
@@ -22,7 +22,7 @@ namespace Familia.Ead.Application.Requests.Authentication.CreateUser
             _context = context;
         }
 
-        public override async Task<Result> Handle(CreateUserRequest request, CancellationToken cancellationToken)
+        public override async Task<Result<Guid>> Handle(CreateUserRequest request, CancellationToken cancellationToken)
         {
             // Validações
             if (!_validators.IsValidEmail(request.Email))
@@ -99,7 +99,7 @@ namespace Familia.Ead.Application.Requests.Authentication.CreateUser
 
             await _context.SaveChangesAsync(cancellationToken);
 
-            return Success();
+            return Success(user.Id);
         }
     }
 }

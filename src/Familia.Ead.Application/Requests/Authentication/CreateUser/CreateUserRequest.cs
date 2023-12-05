@@ -2,7 +2,7 @@
 
 namespace Familia.Ead.Application.Requests.Authentication.CreateUser
 {
-    public class CreateUserRequest : Request
+    public class CreateUserRequest : Request<Guid>
     {
         public string FullName { get; set; }
         public string Email { get; set; }

@@ -102,6 +102,13 @@
             <param name="input">Class Data</param>
             <returns></returns>
         </member>
+        <member name="M:Familia.Ead.Api.Controllers.Class.ClassController.EditClass(Familia.Ead.Api.Controllers.Class.Inputs.EditClassInput)">
+            <summary>
+            Edit class
+            </summary>
+            <param name="input">Class Data</param>
+            <returns></returns>
+        </member>
         <member name="M:Familia.Ead.Api.Controllers.Class.ClassController.SearchClasses(System.Guid)">
             <summary>
             Search all class of course
@@ -151,6 +158,41 @@
             Data em que a aula deve ser lançada
             </summary>
         </member>
+        <member name="P:Familia.Ead.Api.Controllers.Class.Inputs.EditClassInput.ClassId">
+            <summary>
+            Id of class
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Class.Inputs.EditClassInput.className">
+            <summary>
+            Name of Class
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Class.Inputs.EditClassInput.video">
+            <summary>
+            Uri of video class
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Class.Inputs.EditClassInput.description">
+            <summary>
+            Description of class
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Class.Inputs.EditClassInput.OrderId">
+            <summary>
+            Order of class
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Class.Inputs.EditClassInput.Thumb">
+            <summary>
+            Link thumb da aula
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Class.Inputs.EditClassInput.LaunchDate">
+            <summary>
+            Data em que a aula deve ser lançada
+            </summary>
+        </member>
         <member name="T:Familia.Ead.Api.Controllers.Courses.CourseController">
             <summary>
             Course Operations
@@ -162,6 +204,13 @@
             </summary>
             <param name="input">Course Data</param>
             <returns>Course Id</returns>
+        </member>
+        <member name="M:Familia.Ead.Api.Controllers.Courses.CourseController.EditCourse(Familia.Ead.Api.Controllers.Courses.Inputs.EditCourseInput)">
+            <summary>
+            Edit a course
+            </summary>
+            <param name="input">Course Data</param>
+            <returns></returns>
         </member>
         <member name="M:Familia.Ead.Api.Controllers.Courses.CourseController.SearchCourses(System.Boolean)">
             <summary>
@@ -190,9 +239,56 @@
             Description of course
             </summary>
         </member>
+        <member name="T:Familia.Ead.Api.Controllers.Courses.Inputs.EditCourseInput">
+            <summary>
+            Edit Course
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Courses.Inputs.EditCourseInput.CourseId">
+            <summary>
+            Course Id
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Courses.Inputs.EditCourseInput.CourseName">
+            <summary>
+            Name of Course
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Courses.Inputs.EditCourseInput.Description">
+            <summary>
+            Description of course
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Courses.Inputs.EditCourseInput.Workload">
+            <summary>
+            Class quantity
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Courses.Inputs.EditCourseInput.ExamDate">
+            <summary>
+            Date of finish exam
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Courses.Inputs.EditCourseInput.CardUri">
+            <summary>
+            Uri of card image
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Courses.Inputs.EditCourseInput.IsEnabled">
+            <summary>
+            Status of course
+            </summary>
+        </member>
         <member name="M:Familia.Ead.Api.Controllers.Enrollment.EnrollmentController.CreateEnrollment(Familia.Ead.Api.Controllers.Enrollment.Inputs.CreateEnrollmentInput)">
             <summary>
             Create a new enrollment
+            </summary>
+            <param name="input">Enrollment Data</param>
+            <returns></returns>
+        </member>
+        <member name="M:Familia.Ead.Api.Controllers.Enrollment.EnrollmentController.Unenroll(Familia.Ead.Api.Controllers.Enrollment.Inputs.UnenrollInput)">
+            <summary>
+            Remove enrollment
             </summary>
             <param name="input">Enrollment Data</param>
             <returns></returns>
@@ -210,6 +306,21 @@
         <member name="P:Familia.Ead.Api.Controllers.Enrollment.Inputs.CreateEnrollmentInput.CourseId">
             <summary>
             Id of course
+            </summary>
+        </member>
+        <member name="T:Familia.Ead.Api.Controllers.Enrollment.Inputs.UnenrollInput">
+            <summary>
+            Dados para desmatricular um aluno
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Enrollment.Inputs.UnenrollInput.UserId">
+            <summary>
+            Id do aluno
+            </summary>
+        </member>
+        <member name="P:Familia.Ead.Api.Controllers.Enrollment.Inputs.UnenrollInput.CourseId">
+            <summary>
+            Id do curso
             </summary>
         </member>
         <member name="T:Familia.Ead.Api.Controllers.Me.Inputs.CreateHistoryStudentInput">

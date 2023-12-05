@@ -1,5 +1,6 @@
 ﻿using Familia.Ead.Api.Controllers.Courses.Inputs;
 using Familia.Ead.Application.Requests.Courses.CreateCourse;
+using Familia.Ead.Application.Requests.Courses.EditCourse;
 using Familia.Ead.Application.Requests.Courses.GetCourse;
 using Familia.Ead.Application.Requests.Courses.SearchCourses;
 using Familia.Ead.Domain.Entities.Authentication;
@@ -7,6 +8,8 @@ using Familia.Ead.Infrastructure.Bootstrap.Attributes;
 using Lumini.Common.Model.Presenter.WebApi;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace Familia.Ead.Api.Controllers.Courses
 {
@@ -18,6 +21,13 @@ namespace Familia.Ead.Api.Controllers.Courses
     [Authorize]
     public class CourseController : SuperApiController
     {
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public CourseController(IHttpContextAccessor httpContextAccessor)
+        {
+            _httpContextAccessor = httpContextAccessor;
+        }
+
         /// <summary>
         /// Create a new course
         /// </summary>
@@ -41,6 +51,37 @@ namespace Familia.Ead.Api.Controllers.Courses
             var result = await Send(request);
 
             return Created(result);
+        }
+
+        /// <summary>
+        /// Edit a course
+        /// </summary>
+        /// <param name="input">Course Data</param>
+        /// <returns></returns>
+        [ClaimsAuthorize(ClaimConstants.CLAIM_TYPE_COURSE, ClaimConstants.ACTION_EDIT)]
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status422UnprocessableEntity)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
+        public async Task<ActionResult> EditCourse(EditCourseInput input)
+        {
+            var request = new EditCourseRequest
+            {
+                CourseId = input.CourseId,
+                CourseName = input.CourseName,
+                Description = input.Description,
+                Workload = input.Workload,
+                ExamDate = input.ExamDate,
+                CardUri = input.CardUri,
+                IsEnabled = input.IsEnabled,
+                UpdatedBy = Guid.Parse(_httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value)
+            };
+
+            var result = await Send(request);
+
+            return Ok(result);
         }
 
         /// <summary>

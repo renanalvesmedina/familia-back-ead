@@ -19,16 +19,11 @@ namespace Familia.Ead.Application.Requests.Me.GetMyCourses
             var enrolls = await _context.Enrollments.Where(x => x.StudentId == request.UserId && x.Status == true).ToListAsync(cancellationToken);
 
             if (!enrolls.Any())
-                return NotFound(ErrorCatalog.Enrollment.NotFound);
+                return result;
 
             foreach (var enrollment in enrolls)
             {
                 var course = await _context.Courses.SingleOrDefaultAsync(x => x.Id == enrollment.CourseId, cancellationToken);
-
-                //var studentClassHistory = await _context.StudentHistories.OrderBy(c => c.ViewingDate).LastOrDefaultAsync(
-                //    x => x.StudentId == request.UserId
-                //    && x.CourseId == enrollment.Course.Id,
-                //    cancellationToken);
 
                 var studentClassesHistory = await _context.StudentHistories
                     .Where(x => x.StudentId == request.UserId && x.CourseId == enrollment.Course.Id)

@@ -14,6 +14,7 @@ namespace Familia.Ead.Infrastructure.DbContexts
         public DbSet<Class> Classes { get; set; }
         public DbSet<StudentHistory> StudentHistories { get; set; }
         public DbSet<UserLogins> UserLogins { get; set; }
+        public DbSet<ActivityHistory> ActivityHistories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

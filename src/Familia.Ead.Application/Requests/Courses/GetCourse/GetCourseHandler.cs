@@ -27,8 +27,12 @@ namespace Familia.Ead.Application.Requests.Courses.GetCourse
             var result = new GetCourseResponse
             {
                 CourseName = course.CourseName,
+                Description = course.Description,
                 Workload = workload,
-                CourseCardUri = course.CardUri
+                CourseCardUri = course.CardUri,
+                IsEnabled = course.IsEnabled,
+                ExamDate = course.ExamDate,
+                CreatedOn = course.CreatedOn
             };
 
             return Success(result);

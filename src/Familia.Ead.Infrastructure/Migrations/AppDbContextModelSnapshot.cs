@@ -22,6 +22,28 @@ namespace Familia.Ead.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Familia.Ead.Domain.Entities.ActivityHistory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Action")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ActivityAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ActivityHistories");
+                });
+
             modelBuilder.Entity("Familia.Ead.Domain.Entities.Authentication.UserLogins", b =>
                 {
                     b.Property<Guid>("Id")
@@ -95,6 +117,9 @@ namespace Familia.Ead.Infrastructure.Migrations
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ExamDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("IsEnabled")
                         .HasColumnType("bit");

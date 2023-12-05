@@ -8,6 +8,7 @@
         public int Workload { get; set; }
         public string CardUri { get; set; }
         public bool IsEnabled { get; set; }
+        public DateTime ExamDate { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime UpdatedOn { get; set; }
 
