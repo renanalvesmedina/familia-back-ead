@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Familia.Ead.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f2a75c05622982deb652918b14117c98ceeae155")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5a75d7024ec8e489f3d819f788d5eb255265458")]
 [assembly: System.Reflection.AssemblyProductAttribute("Familia.Ead.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Familia.Ead.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

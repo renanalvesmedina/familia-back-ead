@@ -8,5 +8,7 @@
         public string Gender { get; set; }
         public string PhotoUri { get; set; }
         public IList<string> Profiles { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public IList<CourseEnrollmentsModel> courseEnrollments { get; set; }
     }
 }
